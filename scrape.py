@@ -8,6 +8,10 @@ author_pattern = r"([\w\s]+),?\s*"
 author_regex = re.compile(author_pattern)
 journal_pattern = r"[^-]*-\s(.*)"
 journal_regex = re.compile(journal_pattern)
+year_pattern = r"[^\d]*((?:20|19)\d\d)[^\d]*"
+year_regex = re.compile(year_pattern)
+citation_count_pattern = r"[^\d]*(\d*)[^\d]*"
+citation_count_regex = re.compile(citation_count_pattern)
 
 # Parse HTML and save it to a HTML file on disk
 def getAndSaveFile():
@@ -85,21 +89,54 @@ def getAuthorsAndJournal(authorList):
   
   #print(newAuthorList)
   result = convertAuthorStringToList(new_author_list_string)
-  print("Author/Journal: " , result)
+  #print("Author/Journal: " , result)
   return result
+
+def getYearFromJournal(journal):
+  result = year_regex.match(journal)
+    
+  if result: # This if statement ensures there is at least one match
+    return result.groups(0)[0].strip()
+
+  return "N/A"
+
+def getCitationCount(citation_string):
+  result = citation_count_regex.match(citation_string)
+    
+  if result: # This if statement ensures there is at least one match
+    return result.groups(0)[0].strip()
+
+  return "N/A"
 
 ################### Per-paper web scraping
 papers = soup.select('.gs_ri')
 for paper in papers:
+  # Title
   title = paper.select(".gs_rt a")
   print(recursiveGetStringGivenList(title))
+
+  # Author/Journal/Year
   authors = paper.select(".gs_a")
   author_list, journal = getAuthorsAndJournal(authors)
-  print(" ".join(author_list), "\n", journal, "\n\n-----------------------------------\n\n")
+  print("Authors: " + " ".join(author_list))
+  print("Journal: " + journal)
+  print("Year Published: " + getYearFromJournal(journal))
+  
+  # Abstract
+  abstract = paper.select(".gs_rs")
+  print("Abstract: " + recursiveGetStringGivenList(abstract))
 
+  bottom_row_links = paper.select(".gs_fl a")
+  citation_anchor = bottom_row_links[2]
+  print("Citation Count: ", getCitationCount(citation_anchor.contents[0]))
 
-  # Scrape authors from microsoft academic?
-  paper_page = requests.get('https://scholar.google.com/scholar?hl=en&as_sdt=0%2C3&q=social+media&btnG=&oq=social')
+  citations_link = citation_anchor['href'] # Index 2 is the cited by child
+  print("Cited by: ", citations_link)
+  print("\n\n-----------------------------------\n\n")
+
+  
+# Scrape authors from microsoft academic?
+# paper_page = requests.get('https://scholar.google.com/scholar?hl=en&as_sdt=0%2C3&q=social+media&btnG=&oq=social')
 
 ####################
      
