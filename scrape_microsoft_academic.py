@@ -3,6 +3,33 @@ from bs4 import BeautifulSoup, NavigableString
 from utility import recursiveGetString, recursiveGetStringGivenList
 import re
 
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+#driver = webdriver.Firefox()
+driver = webdriver.Chrome()
+driver.get("https://academic.microsoft.com/#/search?iq=%40social%20media%40&q=social%20media&filters=&from=0&sort=0")
+
+try:
+  elem = WebDriverWait(driver, 30).until(
+      EC.presence_of_element_located((By.XPATH, '//*[@id="isrcWrapper"]/div[4]/article[1]/div[3]/section[2]/div/paper-tile[1]/article/section[1]/h2/a/span[2]'))
+  )
+finally:
+  #driver.quit()
+  print("Dynamic Loading Completed")
+  #print(driver.page_source)
+
+# def x():
+#   title_elems = driver.find_elements_by_xpath("//paper-tile")
+#   print("papers = " + str(len(title_elems)))
+#   for elem in title_elems:
+#   title = elem.text
+#   print(title)
+
 import pickle
 
 # # write python dict to a file
@@ -26,7 +53,7 @@ journal_pattern = r"[^-]*-\s(.*)"
 journal_regex = re.compile(journal_pattern)
 year_pattern = r"[^\d]*((?:20|19)\d\d)[^\d]*"
 year_regex = re.compile(year_pattern)
-citation_count_pattern = r"[^\d]*(\d*)[^\d]*"
+citation_count_pattern = r"[^\d]*(\d+,?\d*)[^\d]*"
 citation_count_regex = re.compile(citation_count_pattern)
 
 # Parse HTML and save it to a HTML file on disk
@@ -34,30 +61,26 @@ def getAndSaveFile():
   page = requests.get('https://academic.microsoft.com/#/search?iq=%40social%20media%40&q=social%20media&filters=&from=0&sort=0')
   contents = page.content
 
-  Html_file= open("google.html","w")
+  Html_file= open("mc_ac.html","w")
   Html_file.write(str(contents))
   Html_file.close()
 
   return contents 
 
-contents = getAndSaveFile()
+#contents = getAndSaveFile()
 
 # Read a HTML file from disk
 def readHTML(filename):
-  Html_file= open("google.html","r")
-  content = Html_file.read()
+  Html_file= open("mc_ac.html","r")
+  contents = Html_file.read()
   Html_file.close()
 
-  return content
+  return contents
 
 ###contents = readHTML("google.html")
 
 # Initialize Beautiful Soup
-soup = BeautifulSoup(contents, 'html.parser')
-
-
-titles = soup.select('.gs_rt a')
-authorLists = soup.select('.gs_a')
+soup = BeautifulSoup(driver.page_source, 'html.parser')
 
 # Parse the author string into a list of authors and the journal the article belongs to
 def convertAuthorStringToList(author_list_string):
@@ -125,30 +148,40 @@ def getCitationCount(citation_string):
   return "N/A"
 
 ################### Per-paper web scraping
-papers = soup.select('.gs_ri')
+papers = soup.select('paper-tile')
 for paper in papers:
   # Title
-  title = paper.select(".gs_rt a")
-  print(recursiveGetStringGivenList(title))
+  title = paper.select(".paper-title span[data-bind]")
+  print("Title: " + recursiveGetStringGivenList(title))
 
   # Author/Journal/Year
-  authors = paper.select(".gs_a")
-  author_list, journal = getAuthorsAndJournal(authors)
-  print("Authors: " + " ".join(author_list))
-  print("Journal: " + journal)
-  print("Year Published: " + getYearFromJournal(journal))
+  authors_list = paper.select(".paper-authors")
+  authors = []
+  associations = []
+  for author in authors_list:
+    #author_list, journal = getAuthorsAndJournal(authors)
+    x = author.select("a.button-link")
+    authors.append(recursiveGetString(x[0]))
+    associations.append(recursiveGetString(x[1]))
+
+  print("Authors: " + " ".join(authors))
+  print("Assocaitions: " + " ".join(associations))
+
+  journal = paper.select(".paper-venue li a")
+  print("Journal: " + recursiveGetStringGivenList(journal))
+
+  date = paper.select(".paper-date")
+  print("Date Published: " + recursiveGetStringGivenList(date))
   
   # Abstract
-  abstract = paper.select(".gs_rs")
+  abstract = paper.select(".paper-abstract span")
   print("Abstract: " + recursiveGetStringGivenList(abstract))
 
-  bottom_row_links = paper.select(".gs_fl a")
-  citation_anchor = bottom_row_links[2]
-  print(citation_anchor.contents)
-  print("Citation Count: ", getCitationCount(citation_anchor.contents[0]))
+  citations = paper.select(".paper-actions a.c-count span")
+  print("Citation Count: ", getCitationCount(recursiveGetStringGivenList(citations)))
 
-  citations_link = citation_anchor['href'] # Index 2 is the cited by child
-  print("Cited by: ", citations_link)
+  # citations_link = citation_anchor['href'] # Index 2 is the cited by child
+  # print("Cited by: ", citations_link)
   print("\n\n-----------------------------------\n\n")
 
 
@@ -167,3 +200,7 @@ def getTitles():
 #getTitles()
 #getAuthorsAndJournal()
 ''' 
+
+# !!!!!!!!!! Things to keep track of
+# Link currently visiting
+# List of links to visit (such as the 'next' page) 
