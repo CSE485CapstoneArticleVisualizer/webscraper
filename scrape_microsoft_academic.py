@@ -375,7 +375,9 @@ def main():
 
   while to_be_visited_pages:
     page = to_be_visited_pages.pop()
-````sleep(2)
+
+    time.sleep(2)
+
     try:
       retrieveInfoFromPage(page)
       retry_attempt = 0
