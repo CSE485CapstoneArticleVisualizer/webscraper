@@ -240,7 +240,7 @@ def loadWebPage(web_driver=driver, webpage=None):
       print("Dynamic Loading Completed")
     except:
       attempt_count += 1
-      print("Failed to load page. Starting attempt " + attempt_count + "/" + max_attempts + "...")
+      print("Failed to load page. Starting attempt " + str(attempt_count) + "/" + str(max_attempts) + "...")
       web_driver.refresh()
       continue
       
@@ -375,7 +375,7 @@ def main():
 
   while to_be_visited_pages:
     page = to_be_visited_pages.pop()
-
+````sleep(2)
     try:
       retrieveInfoFromPage(page)
       retry_attempt = 0
@@ -395,7 +395,7 @@ def main():
       global driver
       global reference_driver
 
-      #to_be_visited_pages.add(page)
+      to_be_visited_pages.add(page)
       print("An error has occured while parsing this page: " + page)
 
       # After 3 reattempts, recreate the web drivers to make sure they aren't glitching out
