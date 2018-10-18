@@ -20,7 +20,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 #driver = webdriver.Firefox()
 options = Options()
-options.set_headless(headless=True)
+#options.set_headless(headless=True)
+options.add_argument("--headless")
 #options.add_argument("--disable-gpu")
 driver = webdriver.Firefox(firefox_options=options)
 reference_driver = webdriver.Firefox(firefox_options=options)
@@ -325,6 +326,9 @@ def retrieveInfoFromPage(webpage):
     # Add this article to the web_scraped_articles set
     web_scraped_articles.add(title_str)
     print("\n\n-----------------------------------\n\n")
+
+  # Save the visited page
+  visited_pages.add(driver.current_url)
 
   # After web scraping all the articles on this page... Save next page to be looked at later
   pressNext(driver)

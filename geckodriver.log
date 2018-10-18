@@ -825,3 +825,222 @@ ved observer notification outer-window-destroyed for 6442450957
 
 [Child 14362] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
 [Child 14362] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1539852183040	geckodriver	INFO	Listening on 127.0.0.1:57303
+1539852184636	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539852188920	Marionette	INFO	Listening on port 43285
+1539852189394	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539852194868	geckodriver	INFO	Listening on 127.0.0.1:55501
+1539852196502	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539852201012	Marionette	INFO	Listening on port 39367
+1539852201492	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 14689] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 14689] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 14815] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 14815] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 14815] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1539853164684	geckodriver	INFO	Listening on 127.0.0.1:54391
+1539853166286	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539853171156	Marionette	INFO	Listening on port 41667
+1539853171632	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539853178218	geckodriver	INFO	Listening on 127.0.0.1:58873
+1539853179877	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539853185384	Marionette	INFO	Listening on port 36907
+1539853185856	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://www.atmrum.net/client/v1/atm/fpv2.min.js, line 1: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 15037] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 15161] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 15161] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152[Child 15037] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+1539885977320	geckodriver	INFO	Listening on 127.0.0.1:43663
+1539885979985	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539885987052	Marionette	INFO	Listening on port 39559
+1539885987722	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539885994197	geckodriver	INFO	Listening on 127.0.0.1:55283
+1539885995904	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539886000990	Marionette	INFO	Listening on port 40849
+1539886001534	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 1061] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1061] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 935] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 935] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
