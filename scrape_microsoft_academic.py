@@ -236,7 +236,7 @@ def loadWebPage(web_driver=driver, webpage=None):
   max_attempts = 2
   while attempt_count != -1 and attempt_count <= max_attempts:
     try:
-      elem = WebDriverWait(web_driver, 10).until(
+      elem = WebDriverWait(web_driver, 30).until(
           EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main paper-tile'))
       )
       attempt_count = -1
@@ -375,13 +375,11 @@ def exit_handler():
 
 def main():
   retry_attempt = 0
-
+  page = None
   while to_be_visited_pages:
-    page = to_be_visited_pages.pop()
-
-    time.sleep(2)
-
     try:
+      page = to_be_visited_pages.pop()
+      time.sleep(2)
       retrieveInfoFromPage(page)
       retry_attempt = 0
 

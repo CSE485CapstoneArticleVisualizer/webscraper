@@ -18,14 +18,14 @@ class Article(object):
   
   def save(self):
     #Create new directory if necessary
-    directory = datetime.datetime.today().strftime('%Y-%m-%d')
+    directory = './Data/' + datetime.datetime.today().strftime('%Y-%m-%d')
     if not os.path.exists(directory):
       os.makedirs(directory)
 
     filename = self.date + '--' + self.title
     whitelist = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789')
     filtered_filename = ''.join(filter(whitelist.__contains__, filename))
-    target = './Data/' + directory + '/' + filtered_filename + '.json'
+    target =  directory + '/' + filtered_filename + '.json'
 
     with open(target, 'w') as outfile:
       json.dump(self.__dict__, outfile, sort_keys=True, indent=4, separators=(',', ': '))
