@@ -451,3 +451,347 @@ JavaScript error: chrome://browser/content/content.js, line 353: NS_ERROR_UNEXPE
 
 ###!!! [Child][MessageChannel] Error: (msgtype=0x17002C,name=PBrowser::Msg_SetInputContext) Closed channel: cannot send/recv
 
+1539821912462	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.cgNYJ80fHY3Q"
+1539821917587	Marionette	INFO	Listening on port 63725
+1539821918143	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539821918197	Marionette	DEBUG	[6442450945] Frame script loaded
+1539821918225	Marionette	DEBUG	[6442450945] Frame script registered
+1539821923784	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1539821924095	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1539821925258	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=0&sort=0
+1539821927310	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450957
+1539821930757	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=0&sort=0
+1539821940938	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821941171	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821941174	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821941587	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1539821941587	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1539821941588	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450955
+1539821941716	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821942297	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450969
+1539821945559	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821950653	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821950894	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821950895	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821951258	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450961
+1539821951259	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450962
+1539821951259	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450967
+1539821951491	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821952305	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450981
+1539821954877	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2521720213)&q=papers%20citing%20Mining%20Health%20Social%20Media%20with%20Sentiment%20Analysis&filters=&from=16&sort=0
+1539821994873	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=0&sort=0
+1539821999959	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=0&sort=0
+1539822000233	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=0&sort=0
+1539822000234	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=0&sort=0
+1539822000644	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450973
+1539822000645	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450974
+1539822000646	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450979
+1539822000820	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=0&sort=0
+1539822002431	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450993
+1539822004336	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=0&sort=0
+1539822017607	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822017858	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822017859	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822018193	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450985
+1539822018193	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450986
+1539822018193	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450991
+1539822018390	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822019020	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451005
+1539822021239	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822026332	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822026576	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822026576	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822026871	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450997
+1539822026871	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450998
+1539822026871	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451003
+1539822027069	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822027660	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451017
+1539822029947	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2555394350)&q=papers%20citing%20Social%20media%20in%20colorectal%20surgery.&filters=&from=24&sort=0
+1539822032936	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=0&sort=0
+1539822038026	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=0&sort=0
+1539822038253	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=0&sort=0
+1539822038254	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=0&sort=0
+1539822038581	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451009
+1539822038581	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451010
+1539822038581	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451015
+1539822038778	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=0&sort=0
+1539822040406	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451029
+1539822042791	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=0&sort=0
+1539822053195	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822053431	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822053433	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822053791	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451021
+1539822053791	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451022
+1539822053791	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451027
+1539822053982	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822054632	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451041
+1539822056359	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822061451	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822061690	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822061691	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822062014	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451033
+1539822062014	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451034
+1539822062014	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451039
+1539822062223	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822062881	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451053
+1539822065938	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2517248622)&q=papers%20citing%20The%20Use%20of%20Twitter%20by%20Radiology%20Journals%3A%20An%20Analysis%20of%20Twitter%20Activity%20and%20Impact%20Factor&filters=&from=16&sort=0
+1539822068765	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=0&sort=0
+1539822073870	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=0&sort=0
+1539822074091	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=0&sort=0
+1539822074091	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=0&sort=0
+1539822074415	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451045
+1539822074416	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451046
+1539822074416	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451051
+1539822074640	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=0&sort=0
+1539822075688	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451065
+1539822078176	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=0&sort=0
+1539822085528	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822085771	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822085772	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822086019	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451057
+1539822086019	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451058
+1539822086019	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451063
+1539822086264	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822086842	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451076
+1539822088391	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822093465	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822093852	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822093852	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822094138	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451069
+1539822094138	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451071
+1539822094139	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451074
+1539822094355	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822094986	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451088
+1539822096416	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2606826675)&q=papers%20citing%20How%20Social%20Media%20Is%20Changing%20the%20Practice%20of%20Regional%20Anesthesiology&filters=&from=8&sort=0
+1539822099809	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=0&sort=0
+1539822104884	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=0&sort=0
+1539822105142	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=0&sort=0
+1539822105143	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=0&sort=0
+1539822105465	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451080
+1539822105466	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451081
+1539822105466	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451086
+1539822105712	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=0&sort=0
+1539822107112	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451100
+1539822110070	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=0&sort=0
+1539822117371	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822117589	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822117590	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822117962	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451092
+1539822117962	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451093
+1539822117963	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451098
+1539822118184	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822118827	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451112
+1539822121934	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822127035	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822127244	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822127246	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822127685	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451104
+1539822127686	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451105
+1539822127686	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451110
+1539822127876	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822128484	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451124
+1539822130954	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2767999448)&q=papers%20citing%20Radiologists%20and%20Social%20Media%3A%20Do%20Not%20Forget%20About%20Facebook&filters=&from=8&sort=0
+1539822147770	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=0&sort=0
+1539822152844	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=0&sort=0
+1539822153072	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=0&sort=0
+1539822153074	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=0&sort=0
+1539822153411	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451116
+1539822153412	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451117
+1539822153412	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451122
+1539822153633	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=0&sort=0
+1539822154672	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451134
+1539822155669	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=0&sort=0
+1539822162921	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822163140	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822163141	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822163372	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451128
+1539822163372	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451130
+1539822163373	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451132
+1539822163659	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822164236	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451143
+1539822165762	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822170845	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822171052	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822171053	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822171464	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451139
+1539822171464	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451141
+1539822171464	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451145
+1539822171616	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822172214	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451158
+1539822175945	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2550842361)&q=papers%20citing%20The%20Impact%20of%20Information%20Technology%20on%20Radiology%20Services%3A%20An%20Overview&filters=&from=8&sort=0
+1539822178160	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=0&sort=0
+1539822183249	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=0&sort=0
+1539822183543	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=0&sort=0
+1539822183544	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=0&sort=0
+1539822183953	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451150
+1539822183953	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451151
+1539822183953	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451156
+1539822184091	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=0&sort=0
+1539822184925	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451170
+1539822186557	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=0&sort=0
+1539822193771	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822194033	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822194033	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822194498	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451162
+1539822194499	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451163
+1539822194499	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451168
+1539822194669	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822195310	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451182
+1539822198947	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822204029	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822204307	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822204308	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822204888	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451174
+1539822204888	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451175
+1539822204889	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451180
+1539822205039	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822205608	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451194
+1539822208190	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2742535171)&q=papers%20citing%20Social%20media%20use%20in%20German%20visceral%20surgeons%3A%20a%20cross-sectional%20study%20of%20a%20national%20cohort&filters=&from=8&sort=0
+1539822210264	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=0&sort=0
+1539822215388	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=0&sort=0
+1539822215603	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=0&sort=0
+1539822215604	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=0&sort=0
+1539822215954	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451186
+1539822215955	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451187
+1539822215955	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451192
+1539822216171	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=0&sort=0
+1539822217048	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451206
+1539822218626	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=0&sort=0
+1539822225826	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822226290	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822226291	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822226633	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451198
+1539822226633	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451199
+1539822226634	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451204
+1539822226844	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822227506	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451218
+1539822230946	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822236030	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822236243	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822236244	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822236589	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451210
+1539822236590	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451211
+1539822236590	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451216
+1539822236768	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+1539822237314	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451228
+1539822239529	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2543476880)&q=papers%20citing%20The%20Role%20of%20Social%20Media%20in%20Quality%20Improvement&filters=&from=8&sort=0
+[Parent 31208, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 31580, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 31208, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 31208, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1539822772994	Marionette	INFO	Stopped listening on port 63725
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+50945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=0&sort=0
+1539822290518	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450957
+1539822293163	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=0&sort=0
+1539822310656	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822310886	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822310888	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822311219	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1539822311219	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1539822311220	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450955
+1539822311406	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822312023	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450969
+1539822314377	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822329627	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822329951	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822329952	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822330398	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450961
+1539822330399	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450962
+1539822330399	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450967
+1539822330596	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+1539822331199	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450981
+1539822333628	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2665144402)&q=papers%20citing%20Student%20travel%20health%20a ... 20clinics%20in%20New%20Zealand%20to%20prevent%20imported%20infections%3A%20a%20cross-sectional%20study&filters=&from=8&sort=0
+[Child 24760, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 24760, Chrome_ChildThread] WARNING: pipe err[Parent 30612, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 30612, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 32200, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Ch[Child 7448, Chrome_ChildThread] WARNING: pipe error: 109: file z:/buil[Parent 32672, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 32672, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 15752, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 15752, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build[1539822775556	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1539822776001	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1539822776922	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... 0drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=0&sort=0
+1539822779453	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450956
+1539822780912	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... 0drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=0&sort=0
+[Parent 28724, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 29664, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 2[Child 25968, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Chi1539823658857	Marionette	INFO	Stopped listening on port 65262
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+
+1539823033548	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1539823034285	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... 0drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=0&sort=0
+1539823036089	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450955
+1539823039090	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... 0drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=0&sort=0
+1539823052891	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823053148	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823053149	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823053450	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1539823053450	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1539823053450	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1539823053652	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823054331	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450968
+1539823056859	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823061942	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823062388	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823062389	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823062761	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450960
+1539823062765	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450961
+1539823062766	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450966
+1539823062972	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823063717	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450980
+1539823066057	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2274245116)&q=papers%20citing%20Using%20Twitter%E2%84%A2%20to ... drive%20research%20impact%3A%20A%20discussion%20of%20strategies%2C%20opportunities%20and%20challenges&filters=&from=24&sort=0
+1539823069292	Marionette	DEBUG	[6442450945] Received DOM event popstate for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=0&sort=0
+1539823074377	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=0&sort=0
+1539823074629	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=0&sort=0
+1539823074630	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=0&sort=0
+1539823075114	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450972
+1539823075115	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450973
+1539823075115	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450978
+1539823075309	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=0&sort=0
+1539823077181	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450992
+1539823079194	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=0&sort=0
+1539823092768	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=24&sort=0
+1539823093014	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=24&sort=0
+1539823093016	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=24&sort=0
+1539823094495	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450984
+1539823094496	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450985
+1539823094499	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450990
+1539823094705	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=24&sort=0
+1539823095401	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442451004
+1539823098756	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2261360107)&q=papers%20citing%20Radiologists%E2%80%99%20Usage%20of%20Social%20Media%3A%20Results%20of%20the%20RANSOM%20Survey&filters=&from=24&sort=0
+[Parent 30120, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 30120, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 20088, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 29824, [Child 20088, ChromeChrome_ChildThread] WARNING: pipe error:[Parent 19812, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 19812, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 32072, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/[Child 13644, Chrome_ChildThread] WARNINcommon/ipc_channel_win.cc, line 346G: pipe error: 109: file z:/build/build/src/ipc/chromium/src/
+chrome/common/ipc_channel_win.cc, line 346
+[Chi[Parent 19812, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 24468, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Chil1539823656702	Marionette	INFO	Stopped listening on port 49372
+[GPU 29920, Chrom
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ved observer notification outer-window-destroyed for 6442450957
+1539823278323	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2121001699)&q=papers%20citing%20Users%20of%20the%20world%2C%20unite!%20The%20challenges%20and%20opportunities%20of%20Social%20Media&filters=&from=0&sort=0
+1539823283435	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2121001699)&q=papers%20citing%20Users%20of%20the%20world%2C%20unite!%20The%20challenges%20and%20opportunities%20of%20Social%20Media&filters=&from=0&sort=0
+1539823283683	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2121001699)&q=papers%20citing%20Users%20of%20the%20world%2C%20unite!%20The%20challenges%20and%20opportunities%20of%20Social%20Media&filters=&from=0&sort=0
+1539823283683	Marionette	DEBUG	[6442450945] Received DOM event unload for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2121001699)&q=papers%20citing%20Users%20of%20the%20world%2C%20unite!%20The%20challenges%20and%20opportunities%20of%20Social%20Media&filters=&from=0&sort=0
+1539823284051	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1539823284052	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1539823284052	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450955
+1539823284241	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2121001699)&q=papers%20citing%20Users%20of%20the%20world%2C%20unite!%20The%20challenges%20and%20opportunities%20of%20Social%20Media&filters=&from=0&sort=0
+1539823285886	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450969
+1539823287751	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2121001699)&q=papers%20citing%20Users%20of%20the%20world%2C%20unite!%20The%20challenges%20and%20opportunities%20of%20Social%20Media&filters=&from=0&sort=0
+[Child 24868, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child[Parent 32160, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1539823657724	Marionette	INFO	Stopped listening on port 49697
+[GPU 29648, 
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
