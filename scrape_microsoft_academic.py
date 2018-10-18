@@ -12,18 +12,18 @@ from threading import Thread
 import sys
 
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options  
+from selenium.webdriver.firefox.options import Options  
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 #driver = webdriver.Firefox()
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-gpu")
-driver = webdriver.Chrome(chrome_options=chrome_options)
-reference_driver = webdriver.Chrome(chrome_options=chrome_options)
+options = Options()
+options.set_headless(headless=True)
+#options.add_argument("--disable-gpu")
+driver = webdriver.Firefox(firefox_options=options)
+reference_driver = webdriver.Firefox(firefox_options=options)
 
 # Regex constants
 author_pattern = r"([\w\s]+),?\s*"

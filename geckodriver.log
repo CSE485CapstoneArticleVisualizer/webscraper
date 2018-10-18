@@ -795,3 +795,33 @@ ved observer notification outer-window-destroyed for 6442450957
 [GPU 29648, 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1539851726566	geckodriver	INFO	Listening on 127.0.0.1:35073
+1539851728688	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1539851734716	Marionette	INFO	Listening on port 35143
+1539851735242	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539851790705	geckodriver	INFO	Listening on 127.0.0.1:51699
+1539851851337	geckodriver	INFO	Listening on 127.0.0.1:33193
+1539851852916	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "-headless"]
+1539851857790	Marionette	INFO	Listening on port 37543
+1539851858290	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539851864043	geckodriver	INFO	Listening on 127.0.0.1:34749
+1539851865561	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "-headless"]
+1539851869986	Marionette	INFO	Listening on port 39345
+1539851870454	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 14482] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 14482] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 14482] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 14362] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 14362] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
