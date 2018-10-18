@@ -18,10 +18,14 @@ class Article(object):
   
   def save(self):
     #Create new directory if necessary
-    directory = './Data/' + datetime.datetime.today().strftime('%Y-%m-%d')
+    directory = './Data/'
     if not os.path.exists(directory):
       os.makedirs(directory)
 
+    directory = directory + datetime.datetime.today().strftime('%Y-%m-%d')
+    if not os.path.exists(directory):
+      os.makedirs(directory)
+      
     filename = self.date + '--' + self.title
     whitelist = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789')
     filtered_filename = ''.join(filter(whitelist.__contains__, filename))

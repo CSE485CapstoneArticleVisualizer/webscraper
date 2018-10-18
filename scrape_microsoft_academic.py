@@ -21,6 +21,7 @@ from selenium.webdriver.support import expected_conditions as EC
 #driver = webdriver.Firefox()
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(chrome_options=chrome_options)
 reference_driver = webdriver.Chrome(chrome_options=chrome_options)
 
@@ -236,14 +237,15 @@ def loadWebPage(web_driver=driver, webpage=None):
   max_attempts = 2
   while attempt_count != -1 and attempt_count <= max_attempts:
     try:
-      elem = WebDriverWait(web_driver, 30).until(
+      elem = WebDriverWait(web_driver, 5).until(
           EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main paper-tile'))
       )
       attempt_count = -1
       print("Dynamic Loading Completed")
     except:
+      print("Failed to load page for attempt #" + str(attempt_count) + "/" + str(max_attempts+1) + "...")
       attempt_count += 1
-      print("Failed to load page. Starting attempt " + str(attempt_count) + "/" + str(max_attempts) + "...")
+
       web_driver.refresh()
       continue
       
@@ -433,7 +435,7 @@ def save_every_x_minutes(minutes):
 
 if __name__ == '__main__':
   atexit.register(exit_handler)
-  save_thread = Thread(target = save_every_x_minutes, args = (5, ))
-  save_thread.start()
+  #save_thread = Thread(target = save_every_x_minutes, args = (5, ))
+  #save_thread.start()
   
   main()
