@@ -12,14 +12,17 @@ from threading import Thread
 import sys
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options  
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 #driver = webdriver.Firefox()
-driver = webdriver.Chrome()
-reference_driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(chrome_options=chrome_options)
+reference_driver = webdriver.Chrome(chrome_options=chrome_options)
 
 # Regex constants
 author_pattern = r"([\w\s]+),?\s*"
