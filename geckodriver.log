@@ -1044,3 +1044,603 @@ Full stack:
 
 [Child 935] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
 [Child 935] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1539886933415	geckodriver	INFO	Listening on 127.0.0.1:47365
+1539886935151	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539886939896	Marionette	INFO	Listening on port 38891
+1539886940420	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539886946880	geckodriver	INFO	Listening on 127.0.0.1:48245
+1539886948487	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539886955236	Marionette	INFO	Listening on port 46449
+1539886955764	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 1359] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1359] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+1539887004010	geckodriver	INFO	Listening on 127.0.0.1:57895
+1539887005633	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539887010350	Marionette	INFO	Listening on port 34755
+1539887010874	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539887017927	geckodriver	INFO	Listening on 127.0.0.1:36213
+1539887019591	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539887024494	Marionette	INFO	Listening on port 34203
+1539887025058	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 1571] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1571] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+1539887044593	geckodriver	INFO	Listening on 127.0.0.1:32847
+1539887046203	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539887050924	Marionette	INFO	Listening on port 39373
+1539887051454	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539887057738	geckodriver	INFO	Listening on 127.0.0.1:45285
+1539887059388	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539887064434	Marionette	INFO	Listening on port 37707
+1539887064968	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f19bc8ef77349ec&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f14ff0491f9173a&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f4c984b09590d6&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f1ce7604ca1cac8&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f3c0682d5d90f96&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f23541c6abd547a&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 1775] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1775] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1897] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1897] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1539897131643	geckodriver	INFO	Listening on 127.0.0.1:33819
+1539897133938	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539897141162	Marionette	INFO	Listening on port 42785
+1539897141810	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539897148441	geckodriver	INFO	Listening on 127.0.0.1:60635
+1539897150118	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539897155050	Marionette	INFO	Listening on port 41921
+1539897155558	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 2569] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 2569] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 2455] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 2455] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1539897564757	geckodriver	INFO	Listening on 127.0.0.1:39803
+1539897566411	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539897571118	Marionette	INFO	Listening on port 41991
+1539897571650	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539897578044	geckodriver	INFO	Listening on 127.0.0.1:49727
+1539897579780	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette", "--headless"]
+1539897584626	Marionette	INFO	Listening on port 37999
+1539897585164	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f2f046817e246c4&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=fdbcaa9659b818&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f4171d1596684a&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.d547ddd75cc4ca7cc5a63b70da3da301.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f29471e2772cbd8&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f2708f576a3f656&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f1dc9c5a8ab1112&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f7f22a8c5c1786&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f3d470deba1511&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f224b0b3a210ae&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f12aaa6f4d701fc&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f25787dd2f1a936&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f3c64e92c04b936&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f3b0cf75072cfc8&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f2838c470ef167e&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f2e06b3e893408&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f3ccaf2a3775744&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f3d282cb14a37b2&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=fddc44d1ebb9e&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=fd260f75e3b6d&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://msa-cdn.azureedge.net/App/build/main-bundle.07b563a587e7e32fcae2.js, line 1: ReferenceError: webpackJsonp is not defined
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=fd0dbe6b8be9aa&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f346af12ad916ec&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f56917e714a3ea&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f1b5d6de7890bd8&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f3eb28ed3280236&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f2a121f692d561a&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=faf30ead8d4108&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=fc574246b4024&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f24e2c529a36376&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f2c4db78648655c&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f31c596a1f9f4fc&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f11e96f5b33c3b6&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f283abf5b9ab394&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f1d8d441c6c3722&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f1625381b198188&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f6ae23b1674d7e&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f68ae3210bfbd6&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f14512aeb31de68&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f30f513a3eee33&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f1276748cd9372e&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=ff1b646906d452&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=ff8b267fab9efe&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=fe6359c194f7a8&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/trnHszv6jVd.js?version=42#channel=f163fa4844c901&origin=https%3A%2F%2Facademic.microsoft.com, line 59: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f1e3b15522b38c&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f7af8ebc3765c4&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f33f0d281ae2056&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+JavaScript error: https://msa-cdn.azureedge.net/App/js/libs/knockout/pager.min.js, line 3: ReferenceError: $ is not defined
+JavaScript error: https://msa-cdn.azureedge.net/App/build/main-bundle.07b563a587e7e32fcae2.js, line 1: ReferenceError: pager is not defined
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f170e4c5a8d07a4&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f205cb3735d21ca&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f2ef8a02f0fab42&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f317772d396309c&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f11cc6149922b28&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f43fb3f8bf9254&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f3dd9d6318e36ca&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f265f24cf8906e&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f39b3e6e9f6f7a&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f29814e53ae64a4&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f20aba2741414b6&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f3a88a115b04dfc&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f3ece9181a713ec&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f25726211830996&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f3fc93beb3768e&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=fb944bb91ec5c&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f33a885c7bfb52&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f17845e65f2192&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://academic.microsoft.com/#/search?iq=And(Ty%3D%270%27%2CRId%3D2612662433)&q=papers%20citing%20Using%20sentiment%20analysis%20to%20improve%20supply%20chain%20intelligence&filters=&from=8&sort=0, line 772: ReferenceError: rum is not defined
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f325acceb9df118&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f1a1ff361aaf982&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f3b71b3758f736a&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f5fce9129d984&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f20212508ee94fc&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f5ad9c1e79040c&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f13bbc5c5cf0d66&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f389163b66f8234&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f28fbbc7152f5a4&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://www.atmrum.net/client/v1/atm/fpv2.min.js, line 1: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f2af5080b3803ce&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f1e28deb970a74a&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f23d1f2612ba8e6&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f15615d9f7de58&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f4d13ec71abc9e&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f15170a1715534&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f249de6a6c1cb56&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f147b2112e4071a&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f33cd3545676d1&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f14b92be8dffb96&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f1c4b66c22781e2&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: curContainer.frame.document.documentElement is null
+Full stack: getPageSource@chrome://marionette/content/listener.js:1153:3
+dispatch/</req<@chrome://marionette/content/listener.js:188:22
+TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+TaskImpl@resource://gre/modules/Task.jsm:277:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:252:14
+Task_spawn@resource://gre/modules/Task.jsm:166:12
+dispatch/<@chrome://marionette/content/listener.js:186:15
+
+*************************
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f1abb6338b52388&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f21124403188dfa&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=fd5a9558f80f3c&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f1af0217975b45a&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f1a3acb0c2b4f0c&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f11a1bd8925a86&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.9a52e80b2027b7ab835b0e968a612a25.html?origin=https%3A%2F%2Facademic.microsoft.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings, line 12: Error: Network error.
+JavaScript error: https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f23c801e5f28ca6&origin=https%3A%2F%2Facademic.microsoft.com, line 55: Error: 
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 2871] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 2871] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 2750] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 2750] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152

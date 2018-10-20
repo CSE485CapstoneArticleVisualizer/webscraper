@@ -196,7 +196,7 @@ def getReferencesForPaper(webpage):
   more_pages = True
   while more_pages:
     more_pages = False
-    time.sleep(2)
+    time.sleep(1)
 
     # Retrieve info
     references = references.union(retrieveTitles(reference_driver.page_source))
@@ -238,13 +238,13 @@ def loadWebPage(web_driver=driver, webpage=None):
   max_attempts = 2
   while attempt_count != -1 and attempt_count <= max_attempts:
     try:
-      elem = WebDriverWait(web_driver, 5).until(
+      elem = WebDriverWait(web_driver, 3).until(
           EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main paper-tile'))
       )
       attempt_count = -1
       print("Dynamic Loading Completed")
     except:
-      print("Failed to load page for attempt #" + str(attempt_count) + "/" + str(max_attempts+1) + "...")
+      print("Failed to load page for attempt #" + str(attempt_count) + "/" + str(max_attempts) + "...")
       attempt_count += 1
 
       web_driver.refresh()
@@ -385,7 +385,7 @@ def main():
   while to_be_visited_pages:
     try:
       page = to_be_visited_pages.pop()
-      time.sleep(2)
+      time.sleep(1)
       retrieveInfoFromPage(page)
       retry_attempt = 0
 
@@ -398,7 +398,7 @@ def main():
       print("Exit Save Thread: " + str(end_save_thread))
       break
     except:
-      print("Attempt: " + str(retry_attempt) + "/3")
+      print("Page Scraping Attempt: " + str(retry_attempt) + "/3")
 
       retry_attempt += 1
       global driver
