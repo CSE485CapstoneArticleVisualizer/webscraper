@@ -3,6 +3,7 @@ import os
 import datetime
 
 class Article(object):
+  
   def __init__(self, title="Temp Title", abstract="Temporary Abstract", authors=[], journal="N/A", date="N/A", citationCount="-1"):
     self.title = title
     self.abstract = abstract
