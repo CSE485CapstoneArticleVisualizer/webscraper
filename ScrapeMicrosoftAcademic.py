@@ -28,6 +28,7 @@ def exit_handler():
   timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
   print(timestamp)
   print("Program exit.")
+  print("MAKE SURE TO KILL ALL FIREFOX INSTANCES FROM THE TERMINAL IF THE DRIVER FAILED TO BE KILLED. OTHERWISE THERE WILL BE A MEMORY LEAK.")
 
 def create_scraper(ID):
   global data_source
