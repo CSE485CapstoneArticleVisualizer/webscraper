@@ -90,6 +90,10 @@ class WebScraperDataSource():
     #print("Before pop: " + str(len(self.to_be_visited_pages)))
     if len(self.to_be_visited_pages) > 0:
       page = self.to_be_visited_pages.pop()
+    else:
+      if len(self.retrieveToBeVisitedFromDisk(self.retain)) > 0:
+        page = self.to_be_visited_pages.pop()
+        
     #print("After pop: " + str(len(self.to_be_visited_pages)))
 
     self.lock_to_be_visited_pages.release()
@@ -105,25 +109,25 @@ class WebScraperDataSource():
     self.lock_to_be_visited_pages.release()
 
   def saveVisitedPage(self, page):
-    #self.lock_visited_pages.acquire()
+    self.lock_visited_pages.acquire()
     self.visited_pages.add(page)
-    #self.lock_visited_pages.release()
+    self.lock_visited_pages.release()
   
   def alreadyVisitedPage(self, page):
-    #self.lock_visited_pages.acquire()
+    self.lock_visited_pages.acquire()
     already_visited = (page in self.visited_pages)
-    #self.lock_visited_pages.release()
+    self.lock_visited_pages.release()
     return already_visited
 
   def saveScrapedArticle(self, article):
-    #self.lock_web_scraped_articles.acquire()
+    self.lock_web_scraped_articles.acquire()
     self.web_scraped_articles.add(article)
-    #self.lock_web_scraped_articles.release()
+    self.lock_web_scraped_articles.release()
   
   def alreadyScrapedArticle(self, article):
-    #self.lock_web_scraped_articles.acquire()
+    self.lock_web_scraped_articles.acquire()
     already_scraped = (article in self.web_scraped_articles)
-    #self.lock_web_scraped_articles.release()
+    self.lock_web_scraped_articles.release()
     return already_scraped
 
   #------------------------------------------ END GETTERS and SETTERS
@@ -163,7 +167,7 @@ class WebScraperDataSource():
     print("Before read from disk: " + str(len(self.to_be_visited_pages)))
 
     # Retreive the last X lines
-    lastX = []
+    lastX = set()
     with open('./to_be_visited_pages.txt') as fin:
       lastX = set(deque(fin, X))
       self.to_be_visited_pages = self.to_be_visited_pages.union(lastX)

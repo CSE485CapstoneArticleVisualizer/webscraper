@@ -36,8 +36,14 @@ def create_scraper(ID):
   WebScraper(data_source, logger, ID)
 
 def signal_handler(sig, frame):
-  Globals.end_threads = True
   print('You pressed Ctrl+C!')
+  Globals.end_threads = True
+  print('Globals.end_threads: {0}'.format(Globals.end_threads))
+  global threads
+  #for thread in threads:
+    #print('Joining thread ' + str(thread))
+    #if thread.isAlive():
+      #thread.join()
   sys.exit(0)
 
 
@@ -48,8 +54,13 @@ def main():
   logger = WebScraperLogger()
 
   global num_threads
+  global threads
+  threads = []
   for n in range(num_threads):
-    Thread(target = create_scraper, args = (n+1, )).start()
+    time.sleep(1)
+    thread = Thread(target = create_scraper, args = (n+1, ))
+    threads.append(thread)
+    thread.start()
     print("Created thread #" + str(n+1))
   
 
@@ -74,4 +85,6 @@ if __name__ == '__main__':
   #save_thread.start()
   
   main()
+  while True:
+    time.sleep(1)
   print("End Main")

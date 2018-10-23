@@ -7,6 +7,8 @@ from WebScraperLogger import Priority
 import time
 import re
 import Globals
+import signal
+import sys 
 
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options  
@@ -19,14 +21,24 @@ class WebScraper():
   citation_count_pattern = r"[^\d]*(\d+,?\d*)[^\d]*"
   citation_count_regex = re.compile(citation_count_pattern)
 
+  def exit_handler(self):
+    print('Thread #{0} closing...'.format(self.ID))
+
+    if self.driver is not None:
+      self.driver.close()
+      self.driver.quit()
+      self.driver = None
+
+    print("Thread successfully exit.")
+
   def __init__(self, data_source, logger, ID=0):
+
     logger.log("Initializing WebScraper #{0}...".format(ID))
     self.ID = ID
     self.logger = logger
     self.options = Options()
     self.options.add_argument("--headless")
     self.driver = webdriver.Firefox(firefox_options=self.options)
-    self.reference_driver = webdriver.Firefox(firefox_options=self.options)
     self.data_source = data_source
     self.start()
 
@@ -59,10 +71,10 @@ class WebScraper():
         end_save_thread = True
         
         self.logger.log("\n------------------------------------\nKeyboard Interrupt Detected", priority=Priority.CRITICAL)
-        self.logger.log("[Scraper #{0}] Exit Save Thread: {str(end_save_thread)}".format(self.ID), priority=Priority.CRITICAL)
+        self.logger.log("[Scraper #{0}] Exit Save Thread: {1}".format(self.ID, end_save_thread), priority=Priority.CRITICAL)
         break
       except:
-        self.logger.log("[Scraper #{0}] Page Scraping Attempt: {str(retry_attempt)}/3".format(self.ID), priority=Priority.DEBUG)
+        self.logger.log("[Scraper #{0}] Page Scraping Attempt: {1}/3".format(self.ID, retry_attempt), priority=Priority.DEBUG)
 
         retry_attempt += 1
 
@@ -78,23 +90,23 @@ class WebScraper():
           self.recreateDrivers()
 
     self.logger.log("[Scraper #{0}] ERROR: No pages found... ".format(self.ID), priority=Priority.CRITICAL)
+    try:
+      self.exit_handler()
+    except:
+      self.logger.log("[Scraper #{0}] An error has occured while closing the driver".format(self.ID), priority=Priority.CRITICAL)
 
   def recreateDrivers(self):
     self.logger.log("[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.CRITICAL)
     if self.driver is not None:
       self.driver.close()
+      self.driver.quit()
       self.driver = None
-    if self.reference_driver is not None:
-      self.reference_driver.close()
-      self.reference_driver = None
 
     # In the case that the web drivers closed on themselves, recreate them
     if self.driver is None:
       self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID))
       self.driver = webdriver.Firefox(firefox_options=self.options)
-    if self.reference_driver is None:
-      self.logger.log("[Scraper #{0}] Creating reference driver...".format(self.ID))
-      self.reference_driver = webdriver.Firefox(firefox_options=self.options)
+
 
 
 
@@ -105,32 +117,37 @@ class WebScraper():
     references = set()
     self.logger.log("\n[Scraper #{0}] Loading webpage in REFERENCE_DRIVER: {1}".format(self.ID, webpage), priority=Priority.HIGH)
 
-    self.reference_driver.get(webpage)
+    self.driver.get(webpage)
     # Wait for web page to load  
-    self.loadWebPage(self.reference_driver, None)
+    self.loadWebPage(self.driver, None)
 
     # Loop until no more reference pages
     more_pages = True
     while more_pages:
+      if Globals.end_threads:
+        return None
+
       more_pages = False
       time.sleep(1)
 
       # Retrieve info
-      references = references.union(self.retrieveTitles(self.reference_driver.page_source))
+      references = references.union(self.retrieveTitles(self.driver.page_source))
 
       # Save current page to be fully looked at later
-      future_link = self.reference_driver.current_url
+      future_link = self.driver.current_url
 
       if not self.data_source.alreadyVisitedPage(future_link):
         self.data_source.savePage(future_link)
 
-      more_pages = self.pressNext(self.reference_driver)
+      more_pages = self.pressNext(self.driver)
       if not more_pages:
         self.logger.log("[Scraper #{0}] Found end of references. Total Count: ".format(self.ID) + str(len(references)))
 
     return references
 
   def pressNext(self, web_driver):
+    if Globals.end_threads:
+      return None
     # Check if the 'Next' button exists
     try:
       nextButton = web_driver.find_element(By.CSS_SELECTOR, '.pagination > li > a[aria-label="Next"]')
@@ -160,7 +177,7 @@ class WebScraper():
 
     attempt_count = 1
     max_attempts = 2
-    while attempt_count != -1 and attempt_count <= max_attempts:
+    while attempt_count != -1 and attempt_count <= max_attempts and not Globals.end_threads:
       try:
         elem = WebDriverWait(web_driver, 1.5).until(
             #EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main section.paper-tile'))
@@ -187,9 +204,24 @@ class WebScraper():
     # Initialize Beautiful Soup for this page 
     soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
+    # keep track of the page being scraped
+    current_page = self.driver.current_url
+
+    # Before web scraping all the articles on this page... Save next page to be looked at later
+    self.pressNext(self.driver)
+    future_link = self.driver.current_url
+
+    if not self.data_source.alreadyVisitedPage(future_link):
+      self.data_source.savePage(future_link)
+
+    #self.logger.log("ADDED FUTURE LINK: " + future_link)
+    self.driver.back()
+
     ################### Per-paper web scraping
     papers = soup.select('paper-tile')
     for paper in papers:
+      if Globals.end_threads:
+        return None
       # Title
       title = paper.select(".paper-title span[data-bind]")
       title_str = recursiveGetStringGivenList(title)
@@ -255,17 +287,7 @@ class WebScraper():
       self.logger.log("\n\n-----------------------------------\n\n")
 
     # Save the visited page
-    self.data_source.saveVisitedPage(self.driver.current_url)
-
-    # After web scraping all the articles on this page... Save next page to be looked at later
-    self.pressNext(self.driver)
-    future_link = self.driver.current_url
-
-    if not self.data_source.alreadyVisitedPage(future_link):
-      self.data_source.savePage(future_link)
-
-    #self.logger.log("ADDED FUTURE LINK: " + future_link)
-    self.driver.back()
+    self.data_source.saveVisitedPage(current_page)
 
   def getCitationCount(self, citation_string):
     
