@@ -45,13 +45,28 @@ class WebScraper():
     self.start()
 
   def start(self):
-    total_attempts = 0
-    retry_attempt = 0
+    total_attempts = 0 # Number of attempts across multiple pages
+    retry_attempt = 0 # Number of attempts for 1 page
+
+    # Made for initial startup when there aren't enough pages available for each web scraper
+    wait_count = 0
+    max_wait_count = 10
+    wait_sleep = 30
+
     page = self.data_source.getPage()
     self.logger.log("Started scraper #{0}".format(self.ID), priority=Priority.HIGH)
 
-    while page is not None and not Globals.end_threads:
+    while ((page is not None and page != "")or wait_count < max_wait_count) and not Globals.end_threads:
+      # If a page wasn't currently available, sleep for a minute and try again
+      if page is None:
+        wait_count += 1
+        self.logger.log("[Scraper #{0}] {1}/{2} Waiting for page to become available...".format(self.ID, wait_count, max_wait_count), priority=Priority.LOW)
 
+        time.sleep(wait_sleep)
+        page = self.data_source.getPage()
+        continue
+
+      wait_count = 0 # A page was made available
       # Recreate drivers every 20 web scraping attempts (Prevent memory leak)
       total_attempts += 1
       if total_attempts == 20:
@@ -63,6 +78,8 @@ class WebScraper():
         time.sleep(1)
         self.retrieveInfoFromPage(page)
         self.logger.log("[Scraper #{0}] Successfully scraped page {1}".format(self.ID, page) , priority=Priority.DEBUG)
+        # Save the visited page
+        self.data_source.saveVisitedPage(page)
 
         retry_attempt = 0
         page = self.data_source.getPage()
@@ -150,6 +167,7 @@ class WebScraper():
       future_link = self.driver.current_url
 
       if not self.data_source.alreadyVisitedPage(future_link):
+        self.logger.log("[Scraper #{0}] Saving page for later {1}: ".format(self.ID, future_link), priority=Priority.LOW)
         self.data_source.savePage(future_link)
 
       more_pages = self.pressNext(self.driver)
@@ -221,6 +239,9 @@ class WebScraper():
     Retrieves all of the information for each paper on the page
   '''
   def retrieveInfoFromPage(self, webpage):
+    if webpage is None:
+      return None
+
     self.logger.log("\n[Scraper #{0}] Loading webpage in PRIMARY_DRIVER: ".format(self.ID) + webpage + "\n", priority=Priority.HIGH)
 
     self.loadWebPage(self.driver, webpage)
@@ -310,9 +331,6 @@ class WebScraper():
       self.data_source.saveScrapedArticle(title_str)
 
       self.logger.log("\n\n-----------------------------------\n\n")
-
-    # Save the visited page
-    self.data_source.saveVisitedPage(current_page)
 
   def getCitationCount(self, citation_string):
     

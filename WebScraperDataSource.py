@@ -27,6 +27,12 @@ class WebScraperDataSource():
     self.saveToDiskIndex = saveToDiskIndex
     self.retain = retain 
 
+    # Create to_be_visited_pages if it does not exist
+    if not os.path.exists('./to_be_visited_pages.txt'):
+      target = './to_be_visited_pages.txt'
+      with open(target, 'w') as outfile:
+        outfile.write("")
+
     data = None
     try:
       with open('./visited_pages.json') as f:
@@ -58,7 +64,7 @@ class WebScraperDataSource():
       with open(target, 'w') as outfile:
         json.dump(list(self.visited_pages), outfile, sort_keys=True, indent=4, separators=(',', ': '))
 
-      print('Saving to_be_visited_pages...')
+      print('Saving to_be_visited_pages: ' + str(len(self.to_be_visited_pages)))
 
       # Save to_be_visited_pages
       target = './to_be_visited_pages.txt'
@@ -67,6 +73,7 @@ class WebScraperDataSource():
         for page in self.to_be_visited_pages:
           outfile.write("%s\n" % page)
 
+      
       print('Saving web_scraped_articles...')
 
       # Save to_be_visited_pages
@@ -89,10 +96,10 @@ class WebScraperDataSource():
     page = None
     #print("Before pop: " + str(len(self.to_be_visited_pages)))
     if len(self.to_be_visited_pages) > 0:
-      page = self.to_be_visited_pages.pop()
+      page = self.to_be_visited_pages.pop().rstrip()
     else:
       if len(self.retrieveToBeVisitedFromDisk(self.retain)) > 0:
-        page = self.to_be_visited_pages.pop()
+        page = self.to_be_visited_pages.pop().rstrip()
         
     #print("After pop: " + str(len(self.to_be_visited_pages)))
 
@@ -105,7 +112,7 @@ class WebScraperDataSource():
 
     if len(self.to_be_visited_pages) >= self.saveToDiskIndex:
       self.saveToBeVisitedToDisk(self.retain)
-
+    print("\n[DATA SOURCE] Saved future page " + str(len(self.to_be_visited_pages)) + "\n")
     self.lock_to_be_visited_pages.release()
 
   def saveVisitedPage(self, page):
@@ -115,7 +122,9 @@ class WebScraperDataSource():
   
   def alreadyVisitedPage(self, page):
     self.lock_visited_pages.acquire()
-    already_visited = (page in self.visited_pages)
+    already_visited = False
+    if page in self.visited_pages:
+      already_visited = True
     self.lock_visited_pages.release()
     return already_visited
 
