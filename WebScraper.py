@@ -120,12 +120,12 @@ class WebScraper():
     self.logger.log("\n[Scraper #{0}] Loading webpage in REFERENCE_DRIVER: {1}".format(self.ID, webpage), priority=Priority.HIGH)
 
     self.driver.get(webpage)
-    self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+    #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
 
     # Wait for web page to load  
     #@#######
     self.loadWebPage(self.driver, webpage=webpage)
-    self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 2: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+    #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 2: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
     
     # Loop until no more reference pages
     more_pages = True
@@ -137,10 +137,10 @@ class WebScraper():
       more_pages = False
       
       # Retrieve info
-      self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 3: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+      #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 3: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
       self.driver.refresh()
       time.sleep(2)
-      self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 4: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+      #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 4: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
       html = self.driver.page_source
 
       titles = self.retrieveTitles(html)
@@ -205,7 +205,8 @@ class WebScraper():
       try:
         _ = WebDriverWait(web_driver, 3).until(
             #EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main section.paper-tile'))
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats:nth-child(2)'))
+            #EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats:nth-child(2)'))
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats'))
         )
         attempt_count = -1
         self.logger.log("[Scraper #{0}] Dynamic loading completed".format(self.ID), priority=Priority.LOW)

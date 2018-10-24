@@ -3288,3 +3288,45 @@ annel_win.cc, line 346
 *** You are running in headless mode.
 1540344209187	Marionette	INFO	Listening on port 53928
 1540344209475	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540344694718	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.DVku3CFtigUS"
+*** You are running in headless mode.
+1540344696318	Marionette	INFO	Listening on port 58367
+1540344696333	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js, line 6: Error: Bootstrap's JavaScript requires jQuery
+JavaScript error: https://msa-cdn.azureedge.net/App/js/libs/knockout/pager.min.js, line 3: ReferenceError: $ is not defined
+JavaScript error: https://msa-cdn.azureedge.net/App/build/main-bundle.07b563a587e7e32fcae2.js, line 1: ReferenceError: pager is not defined
+1540348640420	Marionette	INFO	Stopped listening on port 58298
+[Child 55032, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 55032, Chrome_ChildThread] WARNIN[Child 7984, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 7984, Chrome_[Parent 76180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 65672, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 65672, Chrome_Chihild 37872, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 37872, Chrome_ChildThread] WARNING: pipe error: 109: file z:1540347196805	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.IgfDufCJWx6J"
+*** You are running in headless mode.
+1540347198130	Marionette	INFO	Listening on port 57652
+1540347198418	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540347756144	Marionette	INFO	Stopped listening on port 57652
+[Child 72920, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 72920, [Child 65992, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 65992, Chrome_ChildThrea[Parent 21848, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 78908, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 78908, Ch1540347759834	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.8vkMGvXURbv4"
+*** You are running in headless mode.
+1540347761168	Marionette	INFO	Listening on port 64689
+1540347761447	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540348645104	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.u6dk4ycDJGuF"
+*** You are running in headless mode.
+1540348646251	Marionette	INFO	Listening on port 58987
+1540348646716	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540349211025	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.rj1DIFxweECJ"
+*** You are running in headless mode.
+1540349212535	Marionette	INFO	Listening on port 65434
+1540349212634	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540349257537	Marionette	INFO	Stopped listening on port 65368
+[Child 79072, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 79072, Chrome_ChildThread] WARNING: pipe error[Parent 35160, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 55332, Chrome_Ch1540349260632	Marionette	INFO	Stopped listening on port 65519
+[Child 57768, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 57768, Chrome_ChildThread] WARNING: [Child 40536, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 40536, Chrome_Chi[Parent 42708, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+sion
