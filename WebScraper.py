@@ -56,11 +56,11 @@ class WebScraper():
     page = self.data_source.getPage()
     self.logger.log("Started scraper #{0}".format(self.ID), priority=Priority.HIGH)
 
-    while ((page is not None and page != "")or wait_count < max_wait_count) and not Globals.end_threads:
+    while ((page is not None and page != "") or wait_count < max_wait_count) and not Globals.end_threads:
       # If a page wasn't currently available, sleep for a minute and try again
       if page is None:
         wait_count += 1
-        self.logger.log("[Scraper #{0}] {1}/{2} Waiting for page to become available...".format(self.ID, wait_count, max_wait_count), priority=Priority.LOW)
+        self.logger.log("[Scraper #{0}] [Attempt {1}/{2}] Waiting for page to become available...".format(self.ID, wait_count, max_wait_count), priority=Priority.LOW)
 
         time.sleep(wait_sleep)
         page = self.data_source.getPage()
