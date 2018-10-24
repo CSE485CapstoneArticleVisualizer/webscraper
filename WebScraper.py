@@ -34,6 +34,8 @@ class WebScraper():
   def __init__(self, data_source, logger, ID=0):
 
     logger.log("Initializing WebScraper #{0}...".format(ID))
+    self.RESET_COUNT = 500
+    self.loadCount = 0
     self.ID = ID
     self.logger = logger
     self.options = Options()
@@ -50,9 +52,9 @@ class WebScraper():
 
     while page is not None and not Globals.end_threads:
 
-      # Recreate drivers every 250 web scraping attempts (Prevent memory leak)
+      # Recreate drivers every 20 web scraping attempts (Prevent memory leak)
       total_attempts += 1
-      if total_attempts == 250:
+      if total_attempts == 20:
         self.recreateDrivers()
         total_attempts = 0
 
@@ -104,7 +106,7 @@ class WebScraper():
 
     # In the case that the web drivers closed on themselves, recreate them
     if self.driver is None:
-      self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID))
+      self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID), priority=Priority.CRITICAL)
       self.driver = webdriver.Firefox(firefox_options=self.options)
 
 
@@ -118,20 +120,33 @@ class WebScraper():
     self.logger.log("\n[Scraper #{0}] Loading webpage in REFERENCE_DRIVER: {1}".format(self.ID, webpage), priority=Priority.HIGH)
 
     self.driver.get(webpage)
-    # Wait for web page to load  
-    self.loadWebPage(self.driver, None)
+    self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
 
+    # Wait for web page to load  
+    #@#######
+    self.loadWebPage(self.driver, webpage=webpage)
+    self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 2: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+    
     # Loop until no more reference pages
     more_pages = True
     while more_pages:
       if Globals.end_threads:
         return None
 
-      more_pages = False
-      time.sleep(1)
 
+      more_pages = False
+      
       # Retrieve info
-      references = references.union(self.retrieveTitles(self.driver.page_source))
+      self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 3: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+      self.driver.refresh()
+      time.sleep(2)
+      self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 4: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+      html = self.driver.page_source
+
+      titles = self.retrieveTitles(html)
+      self.logger.log("\n[Scraper #{0}] TITLES: {1}".format(self.ID, titles), priority=Priority.HIGH)
+
+      references = references.union(titles)
 
       # Save current page to be fully looked at later
       future_link = self.driver.current_url
@@ -141,34 +156,43 @@ class WebScraper():
 
       more_pages = self.pressNext(self.driver)
       if not more_pages:
-        self.logger.log("[Scraper #{0}] Found end of references. Total Count: ".format(self.ID) + str(len(references)))
+        self.logger.log("[Scraper #{0}] Found end of references. Total Count: ".format(self.ID) + str(len(references)), priority=Priority.HIGH)
 
+    self.logger.log("[Scraper #{0}] Found end of references: {1}".format(self.ID, references), priority=Priority.HIGH)
     return references
 
   def pressNext(self, web_driver):
     if Globals.end_threads:
-      return None
+      return False
     # Check if the 'Next' button exists
     try:
       nextButton = web_driver.find_element(By.CSS_SELECTOR, '.pagination > li > a[aria-label="Next"]')
       if nextButton is not None:
         #driver.execute_script("document.querySelectorAll('.pagination > li:nth-child(8) > a:nth-child(1)')[0].click()")
         web_driver.execute_script("document.querySelectorAll('.pagination > li > a[aria-label=\"Next\"]')[0].click()")
-        self.logger.log("[Scraper #{0}] NEXT PAGE".format(self.ID))
+        self.logger.log("[Scraper #{0}] NEXT PAGE".format(self.ID), priority=Priority.DEBUG)
         self.loadWebPage(web_driver) 
 
         return True
         
     # No 'Next' button present
     except: 
-      self.logger.log("No next button found")
+      self.logger.log("No next button found", priority=Priority.DEBUG)
 
     return False
 
   def loadWebPage(self, web_driver = None, webpage=None):
+    self.loadCount += 1
+
     time.sleep(1)
     if web_driver is None:
       web_driver = self.driver
+
+    if self.loadCount >= self.RESET_COUNT:
+      if webpage is None:
+        webpage = web_driver.current_url
+      self.recreateDrivers()
+      self.loadCount = 0
 
     if webpage is not None:
       web_driver.get(webpage)
@@ -179,7 +203,7 @@ class WebScraper():
     max_attempts = 2
     while attempt_count != -1 and attempt_count <= max_attempts and not Globals.end_threads:
       try:
-        elem = WebDriverWait(web_driver, 1.5).until(
+        _ = WebDriverWait(web_driver, 3).until(
             #EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main section.paper-tile'))
             EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats:nth-child(2)'))
         )
@@ -190,6 +214,7 @@ class WebScraper():
         attempt_count += 1
 
         web_driver.refresh()
+        time.sleep(2)
         continue
         
 
@@ -202,30 +227,31 @@ class WebScraper():
     self.loadWebPage(self.driver, webpage)
 
     # Initialize Beautiful Soup for this page 
-    soup = BeautifulSoup(self.driver.page_source, 'html.parser')
+    html = str(self.driver.page_source)
+    soup = BeautifulSoup(html, 'html.parser')
+    papers = soup.select('paper-tile')
 
     # keep track of the page being scraped
     current_page = self.driver.current_url
 
     # Before web scraping all the articles on this page... Save next page to be looked at later
-    self.pressNext(self.driver)
-    future_link = self.driver.current_url
+    if self.pressNext(self.driver):
+      future_link = self.driver.current_url
 
-    if not self.data_source.alreadyVisitedPage(future_link):
-      self.data_source.savePage(future_link)
+      if not self.data_source.alreadyVisitedPage(future_link):
+        self.data_source.savePage(future_link)
 
-    #self.logger.log("ADDED FUTURE LINK: " + future_link)
-    self.driver.back()
+      #self.logger.log("ADDED FUTURE LINK: " + future_link)
+      self.driver.back()
 
     ################### Per-paper web scraping
-    papers = soup.select('paper-tile')
     for paper in papers:
       if Globals.end_threads:
         return None
       # Title
       title = paper.select(".paper-title span[data-bind]")
       title_str = recursiveGetStringGivenList(title)
-      self.logger.log("Title: " + title_str)
+      self.logger.log("[Scraper #{0}] Title: ".format(self.ID) + title_str, priority=Priority.HIGH)
 
       # If we have already web scraped this paper, skip it
       if self.data_source.alreadyScrapedArticle(title_str):

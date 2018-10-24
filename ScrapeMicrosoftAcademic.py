@@ -9,6 +9,8 @@ from threading import Thread
 from multiprocessing import Process
 from WebScraperLogger import WebScraperLogger
 import Globals
+import os
+import psutil
 
 # Regex constants
 # author_pattern = r"([\w\s]+),?\s*"
@@ -45,7 +47,16 @@ def signal_handler(sig, frame):
     #print('Joining thread ' + str(thread))
     #if thread.isAlive():
       #thread.join()
+
+  PROCNAME = "geckodriver" # or chromedriver or IEDriverServer
+  for proc in psutil.process_iter():
+      # check whether the process name matches
+      if proc.name() == PROCNAME:
+          proc.kill()
+          
   sys.exit(0)
+
+
 
 
 def main():
