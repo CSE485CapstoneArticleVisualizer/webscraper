@@ -92,7 +92,7 @@ if __name__ == '__main__':
   signal.signal(signal.SIGINT, signal_handler)
 
   global num_threads
-  num_threads = 14
+  num_threads = 5
   #save_thread = Thread(target = save_every_x_minutes, args = (5, ))
   #save_thread.start()
   

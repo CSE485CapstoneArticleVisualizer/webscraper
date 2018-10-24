@@ -86,9 +86,7 @@ class WebScraper():
         # After 3 reattempts, recreate the web drivers to make sure they aren't glitching out
         if retry_attempt > 3:
           retry_attempt = 0
-          new_page = self.data_source.getPage()
-          self.data_source.savePage(page)
-          page = new_page
+          page = self.data_source.getPage()
           self.recreateDrivers()
 
     self.logger.log("[Scraper #{0}] ERROR: No pages found... ".format(self.ID), priority=Priority.CRITICAL)
