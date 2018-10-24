@@ -23,7 +23,7 @@ class WebScraperDataSource():
   saveToDiskIndex is the max number of pages in the to_be_visited_pages set before saving the contents to disk 
   retain is the number of to_be_visited_pages to keep in memory (save the rest to disk)
   '''
-  def __init__(self, saveToDiskIndex = 1000, retain = 100):
+  def __init__(self, saveToDiskIndex = 750, retain = 250):
     self.saveToDiskIndex = saveToDiskIndex
     self.retain = retain 
 
