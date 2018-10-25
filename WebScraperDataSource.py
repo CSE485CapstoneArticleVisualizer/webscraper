@@ -5,20 +5,6 @@ import os
 
 class WebScraperDataSource():
   
-  # ------------------------------ Data 
-  # The articles that have been web scraped. Don't need to look at them again!
-  web_scraped_articles = set()
-  lock_web_scraped_articles = threading.RLock()
-
-  # Add to visited_pages after creating the json files for each paper on the page
-  visited_pages = set() 
-  lock_visited_pages = threading.RLock()
-
-  # After finishing the current page remove the current page off the list and add the next page to the list
-  # When getting the citedBy papers, add each page to the visited_pages set
-  to_be_visited_pages = set()
-  lock_to_be_visited_pages = threading.RLock()
-
   '''
   saveToDiskIndex is the max number of pages in the to_be_visited_pages set before saving the contents to disk 
   retain is the number of to_be_visited_pages to keep in memory (save the rest to disk)
@@ -26,6 +12,21 @@ class WebScraperDataSource():
   def __init__(self, saveToDiskIndex = 750, retain = 250):
     self.saveToDiskIndex = saveToDiskIndex
     self.retain = retain 
+
+    # ------------------------------ Data 
+    # The articles that have been web scraped. Don't need to look at them again!
+    self.web_scraped_articles = set()
+    self.lock_web_scraped_articles = threading.RLock()
+
+    # Add to visited_pages after creating the json files for each paper on the page
+    self.visited_pages = set() 
+    self.lock_visited_pages = threading.RLock()
+
+    # After finishing the current page remove the current page off the list and add the next page to the list
+    # When getting the citedBy papers, add each page to the visited_pages set
+    self.to_be_visited_pages = set()
+    self.lock_to_be_visited_pages = threading.RLock()
+    # ------------------------------ END Data 
 
     # Create to_be_visited_pages if it does not exist
     if not os.path.exists('./to_be_visited_pages.txt'):
@@ -129,13 +130,19 @@ class WebScraperDataSource():
     return already_visited
 
   def saveScrapedArticle(self, article):
+    print("\n[DATA SOURCE] Webscraped an article!\n")
     self.lock_web_scraped_articles.acquire()
     self.web_scraped_articles.add(article)
     self.lock_web_scraped_articles.release()
   
   def alreadyScrapedArticle(self, article):
     self.lock_web_scraped_articles.acquire()
-    already_scraped = (article in self.web_scraped_articles)
+
+    already_scraped = False
+    if article in self.web_scraped_articles:
+      already_scraped = True
+      print("\n[DATA SOURCE] Non-Fatal Error: Already scraped article {0}\n".format(article))
+
     self.lock_web_scraped_articles.release()
     return already_scraped
 

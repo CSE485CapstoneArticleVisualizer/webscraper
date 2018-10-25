@@ -221,8 +221,8 @@ class WebScraper():
       try:
         _ = WebDriverWait(web_driver, 3).until(
             #EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main section.paper-tile'))
-            #EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats:nth-child(2)'))
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats'))
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats:nth-child(2)'))
+            #EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats'))
         )
         attempt_count = -1
         self.logger.log("[Scraper #{0}] Dynamic loading completed".format(self.ID), priority=Priority.LOW)
@@ -250,9 +250,6 @@ class WebScraper():
     html = str(self.driver.page_source)
     soup = BeautifulSoup(html, 'html.parser')
     papers = soup.select('paper-tile')
-
-    # keep track of the page being scraped
-    current_page = self.driver.current_url
 
     # Before web scraping all the articles on this page... Save next page to be looked at later
     if self.pressNext(self.driver):
