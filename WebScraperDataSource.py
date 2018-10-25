@@ -1,17 +1,26 @@
+import settings
 import json
 import threading
 from collections import deque
 import os 
+import time
 
 class WebScraperDataSource():
   
   '''
-  saveToDiskIndex is the max number of pages in the to_be_visited_pages set before saving the contents to disk 
-  retain is the number of to_be_visited_pages to keep in memory (save the rest to disk)
+  DATA_SOURCE_MAX_PAGE_COUNT_IN_MEM is the max number of pages in the to_be_visited_pages set before saving the contents to disk 
+  DATA_SOURCE_RETRIEVE_PAGE_COUNT is the number of to_be_visited_pages to keep in memory (save the rest to disk)
   '''
-  def __init__(self, saveToDiskIndex = 750, retain = 250):
-    self.saveToDiskIndex = saveToDiskIndex
-    self.retain = retain 
+
+  def log(self, X):
+    if self.DATA_SOURCE_LOGGING_ENABLED:
+      print(X)
+
+  def __init__(self):
+
+    self.DATA_SOURCE_MAX_PAGE_COUNT_IN_MEM = int(os.getenv("DATA_SOURCE_MAX_PAGE_COUNT_IN_MEM"))
+    self.DATA_SOURCE_RETRIEVE_PAGE_COUNT = int(os.getenv("DATA_SOURCE_RETRIEVE_PAGE_COUNT"))
+    self.DATA_SOURCE_LOGGING_ENABLED = (os.getenv("DATA_SOURCE_LOGGING_ENABLED") == "on")
 
     # ------------------------------ Data 
     # The articles that have been web scraped. Don't need to look at them again!
@@ -41,7 +50,7 @@ class WebScraperDataSource():
         # pprint(data)
         self.visited_pages = set(data)
 
-      self.retrieveToBeVisitedFromDisk(retain)
+      self.retrieveToBeVisitedFromDisk(DATA_SOURCE_RETRIEVE_PAGE_COUNT)
         
       with open('./web_scraped_articles.json') as f:
         data = json.load(f)
@@ -49,41 +58,42 @@ class WebScraperDataSource():
         self.web_scraped_articles = set(data)
 
     except FileNotFoundError:
-      print("Non-Fatal Error: Could not find visited_pages.json OR to_be_visited_pages.json OR web_scraped_articles.json in local directory.")
+      self.log("Non-Fatal Error: Could not find visited_pages.json OR to_be_visited_pages.json OR web_scraped_articles.json in local directory.")
     except:
-      print("ERROR: An unknown error has occured while reading visited_pages.json OR to_be_visited_pages.json OR web_scraped_articles.json")
+      self.log("ERROR: An unknown error has occured while reading visited_pages.json OR to_be_visited_pages.json OR web_scraped_articles.json")
 
     self.to_be_visited_pages.add("https://academic.microsoft.com/#/search?iq=And(Ty%3D'0'%2CRId%3D2165228770)&q=papers%20citing%20Social%20media%20and%20health%20care%20professionals%3A%20benefits%2C%20risks%2C%20and%20best%20practices.&filters=&from=0&sort=0")
     self.to_be_visited_pages.add("https://academic.microsoft.com/#/search?iq=%40social%20media%40&q=social%20media&filters=&from=0&sort=0")
 
   def save_all_data(self):
     try:
-      print('Saving visited_pages...')
+      self.log()
+      self.log('Saving visited_pages: ' + str(len(self.visited_pages)))
       # Save visited_pages
       target = './visited_pages.json'
 
       with open(target, 'w') as outfile:
         json.dump(list(self.visited_pages), outfile, sort_keys=True, indent=4, separators=(',', ': '))
 
-      print('Saving to_be_visited_pages: ' + str(len(self.to_be_visited_pages)))
+      self.log('Saving to_be_visited_pages: ' + str(len(self.to_be_visited_pages)))
 
       # Save to_be_visited_pages
       target = './to_be_visited_pages.txt'
       with open(target, 'a') as outfile:
         #json.dump(list(to_be_visited_pages), outfile, sort_keys=True, indent=4, separators=(',', ': '))
         for page in self.to_be_visited_pages:
-          outfile.write("%s\n" % page)
+          outfile.write("%s\n" % page.rstrip())
 
       
-      print('Saving web_scraped_articles...')
-
+      self.log('Saving web_scraped_articles: ' + str(len(self.web_scraped_articles)))
+      self.log()
       # Save to_be_visited_pages
       target = './web_scraped_articles.json'
       with open(target, 'w') as outfile:
         json.dump(list(self.web_scraped_articles), outfile, sort_keys=True, indent=4, separators=(',', ': '))
       
     except:
-      print("FATAL ERROR OCCURED: Failed to save files.")
+      self.log("FATAL ERROR OCCURED: Failed to save files.")
       return False
     
     # Success!
@@ -99,7 +109,7 @@ class WebScraperDataSource():
     if len(self.to_be_visited_pages) > 0:
       page = self.to_be_visited_pages.pop().rstrip()
     else:
-      if len(self.retrieveToBeVisitedFromDisk(self.retain)) > 0:
+      if len(self.retrieveToBeVisitedFromDisk(self.DATA_SOURCE_RETRIEVE_PAGE_COUNT)) > 0:
         page = self.to_be_visited_pages.pop().rstrip()
         
     #print("After pop: " + str(len(self.to_be_visited_pages)))
@@ -111,9 +121,9 @@ class WebScraperDataSource():
     self.lock_to_be_visited_pages.acquire()
     self.to_be_visited_pages.add(page)
 
-    if len(self.to_be_visited_pages) >= self.saveToDiskIndex:
-      self.saveToBeVisitedToDisk(self.retain)
-    print("\n[DATA SOURCE] Saved future page " + str(len(self.to_be_visited_pages)) + "\n")
+    if len(self.to_be_visited_pages) >= self.DATA_SOURCE_MAX_PAGE_COUNT_IN_MEM:
+      self.saveToBeVisitedToDisk(self.DATA_SOURCE_RETRIEVE_PAGE_COUNT)
+    self.log("\n[DATA SOURCE] Saved future page " + str(len(self.to_be_visited_pages)) + "\n")
     self.lock_to_be_visited_pages.release()
 
   def saveVisitedPage(self, page):
@@ -130,7 +140,7 @@ class WebScraperDataSource():
     return already_visited
 
   def saveScrapedArticle(self, article):
-    print("\n[DATA SOURCE] Webscraped an article!\n")
+    self.log("\n[DATA SOURCE] Webscraped an article!\n")
     self.lock_web_scraped_articles.acquire()
     self.web_scraped_articles.add(article)
     self.lock_web_scraped_articles.release()
@@ -141,7 +151,7 @@ class WebScraperDataSource():
     already_scraped = False
     if article in self.web_scraped_articles:
       already_scraped = True
-      print("\n[DATA SOURCE] Non-Fatal Error: Already scraped article {0}\n".format(article))
+      self.log("\n[DATA SOURCE] Non-Fatal Error: Already scraped article {0}\n".format(article))
 
     self.lock_web_scraped_articles.release()
     return already_scraped
@@ -149,19 +159,19 @@ class WebScraperDataSource():
   #------------------------------------------ END GETTERS and SETTERS
 
 
-  def saveToBeVisitedToDisk(self, retain=100):
-    print("\n\n[DATA SOURCE] SAVING %d to_be_visited_pages TO DISK\n\n" % retain)
+  def saveToBeVisitedToDisk(self, DATA_SOURCE_RETRIEVE_PAGE_COUNT=100):
+    self.log("\n\n[DATA SOURCE] SAVING %d to_be_visited_pages TO DISK\n\n" % DATA_SOURCE_RETRIEVE_PAGE_COUNT)
 
     self.lock_to_be_visited_pages.acquire()
-    retain_set = set()
-    print("Before write to disk: " + str(len(self.to_be_visited_pages)))
+    DATA_SOURCE_RETRIEVE_PAGE_COUNT_set = set()
+    self.log("Before write to disk: " + str(len(self.to_be_visited_pages)))
 
-    if len(self.to_be_visited_pages) <= retain:
+    if len(self.to_be_visited_pages) <= DATA_SOURCE_RETRIEVE_PAGE_COUNT:
       self.lock_to_be_visited_pages.release()
       return
     else:
-      for _ in range(retain):
-        retain_set.add(self.to_be_visited_pages.pop())
+      for _ in range(DATA_SOURCE_RETRIEVE_PAGE_COUNT):
+        DATA_SOURCE_RETRIEVE_PAGE_COUNT_set.add(self.to_be_visited_pages.pop())
         
 
     # Save to_be_visited_pages
@@ -169,23 +179,25 @@ class WebScraperDataSource():
     with open(target, 'a') as outfile:
       #json.dump(list(to_be_visited_pages), outfile, sort_keys=True, indent=4, separators=(',', ': '))
       for page in self.to_be_visited_pages:
-        outfile.write("%s\n" % page)
+        outfile.write("%s\n" % page.rstrip())
           
     # Retain X pages
-    self.to_be_visited_pages = retain_set
-    print("After write to disk: " + str(len(self.to_be_visited_pages)))
+    self.to_be_visited_pages = DATA_SOURCE_RETRIEVE_PAGE_COUNT_set
+    self.log("After write to disk: " + str(len(self.to_be_visited_pages)))
 
     self.lock_to_be_visited_pages.release()
 
   def retrieveToBeVisitedFromDisk(self, X=100):
-    print("\n\nRETRIEVING %d to_be_visited_pages FROM DISK\n\n" % X)
+    self.log("\n\n[DATA SOURCE] RETRIEVING %d to_be_visited_pages FROM DISK" % X)
     self.lock_to_be_visited_pages.acquire()
-    print("Before read from disk: " + str(len(self.to_be_visited_pages)))
+    self.log("Size before read from disk: " + str(len(self.to_be_visited_pages)))
 
     # Retreive the last X lines
     lastX = set()
     with open('./to_be_visited_pages.txt') as fin:
-      lastX = set(deque(fin, X))
+      temp = deque(fin, X)
+      lastX = set(temp)
+      self.log("Retrieved " + str(len(temp)) + " lines")
       self.to_be_visited_pages = self.to_be_visited_pages.union(lastX)
 
     # Delete the last X lines
@@ -215,7 +227,7 @@ class WebScraperDataSource():
         break
 
     file.close()
-    print("After read from disk: " + str(len(self.to_be_visited_pages)))
+    self.log("Size after read from disk: " + str(len(self.to_be_visited_pages)) + "\n\n")
 
     self.lock_to_be_visited_pages.release()
 

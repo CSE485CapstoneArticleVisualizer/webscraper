@@ -7504,14 +7504,109 @@ Channel error: cannot send/recv
 1540462192768	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+[Parent 85984, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 86776, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Ch[iChild 86848, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 86848, C[Parent 85984, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 86364, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 86364, Chrome_1540462775039	Marionette	INFO	Stopped listening on port 63259
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+
+
+cc, line 346
+[Child 8760, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 8760, Chro1540462774206	Marionette	INFO	Stopped listening on port 64187
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ssages will be lost
+
+[GPU 8859
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+49536, Chrome_ChildThread] WARNI1540462773288	Marionette	INFO	Stopped listening on port 64231
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+rc/chrome/common/ipc_channel_win.cc, line 346
+[Child 31236, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 31236, Ch1540462772833	Marionette	INFO	Stopped listening on port 64278
+[GPU 564
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540493625533	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.6jYekp8qxRZh"
+*** You are running in headless mode.
+1540493626919	Marionette	INFO	Listening on port 51134
+1540493627153	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
-1540462499821	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.yGWfIqf8MppA"
-1540462501364	Marionette	INFO	Listening on port 64249
-1540462501438	Marionette	WARN	TLS certificate errors will be ignored for this session
--remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.5AqfrrpkEWVu"
-1540462503182	Marionette	INFO	Listening on port 64278
-1540462503785	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540494127297	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.dKol3yvi6vib"
+*** You are running in headless mode.
+1540494128305	Marionette	INFO	Listening on port 51729
+1540494128310	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1540494306145	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.BEcKIZ0o2JKb"
+*** You are running in headless mode.
+1540494307127	Marionette	INFO	Listening on port 52111
+1540494307153	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540494307197	Marionette	INFO	Stopped listening on port 52111
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+[Parent 25468, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 42808, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 42808, [Child 18972, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 18972, Chrome_ChildThread] [Parent 25468, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 37412, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 37412, Chrome_ChildThread]JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
+1540494339074	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.DMUQKoFzGxBG"
+*** You are running in headless mode.
+1540494340371	Marionette	INFO	Listening on port 52155
+1540494340688	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1540494758693	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.nlBpGaJhvl5Q"
+*** You are running in headless mode.
+1540494759699	Marionette	INFO	Listening on port 53289
+1540494759800	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1540495610656	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.t2HedLEomTKY"
+*** You are running in headless mode.
+1540495611647	Marionette	INFO	Listening on port 55533
+1540495611664	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1540495939450	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.FkPgdWEYRWU4"
+*** You are running in headless mode.
+1540495940495	Marionette	INFO	Listening on port 56995
+1540495940570	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1540496301268	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.ERNpZ3AY2qpS"
+*** You are running in headless mode.
+1540496302272	Marionette	INFO	Listening on port 58291
+1540496302277	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement

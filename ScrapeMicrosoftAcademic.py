@@ -1,3 +1,4 @@
+import settings
 import signal
 import sys
 import time
@@ -19,10 +20,10 @@ import psutil
 # journal_regex = re.compile(journal_pattern)
 # year_pattern = r"[^\d]*((?:20|19)\d\d)[^\d]*"
 # year_regex = re.compile(year_pattern)
-
+DEFAULT_NUM_THREADS = int(os.getenv("NUM_THREADS"))
 
 def exit_handler():
-  print('Application shutting down...')
+  print('\n\nApplication shutting down...')
 
   global data_source
   data_source.save_all_data()
@@ -42,6 +43,8 @@ def signal_handler(sig, frame):
   print('You pressed Ctrl+C!')
   Globals.end_threads = True
   print('Globals.end_threads: {0}'.format(Globals.end_threads))
+  print('\nPLEASE WAIT WHILE THE THREADS CLOSE...\n\n')
+
   global threads
   #for thread in threads:
     #print('Joining thread ' + str(thread))
@@ -60,12 +63,26 @@ def signal_handler(sig, frame):
 
 
 def main():
+
+  
+  
   global data_source
   data_source = WebScraperDataSource()
   global logger
   logger = WebScraperLogger()
+  if len(sys.argv) > 2:
+    arg = str(sys.argv[2]).lower()
+    if arg == "false" or arg == "f":
+      logger.logging_enabled = False
+    else:
+      logger.logging_enabled = True
 
   global num_threads
+  if len(sys.argv) > 1:
+    num_threads = int(sys.argv[1])
+  else:
+    num_threads = DEFAULT_NUM_THREADS
+
   global threads
   threads = []
   for n in range(num_threads):
@@ -91,8 +108,6 @@ if __name__ == '__main__':
   atexit.register(exit_handler)
   signal.signal(signal.SIGINT, signal_handler)
 
-  global num_threads
-  num_threads = 5
   #save_thread = Thread(target = save_every_x_minutes, args = (5, ))
   #save_thread.start()
   

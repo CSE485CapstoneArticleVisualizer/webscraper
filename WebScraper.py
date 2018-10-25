@@ -77,7 +77,7 @@ class WebScraper():
       try:
         time.sleep(1)
         self.retrieveInfoFromPage(page)
-        self.logger.log("[Scraper #{0}] Successfully scraped page {1}".format(self.ID, page) , priority=Priority.DEBUG)
+        self.logger.log("[Scraper #{0}] Successfully scraped page {1}".format(self.ID, page) , priority=Priority.NORMAL)
         # Save the visited page
         self.data_source.saveVisitedPage(page)
 
@@ -93,7 +93,7 @@ class WebScraper():
         self.logger.log("[Scraper #{0}] Exit Save Thread: {1}".format(self.ID, end_save_thread), priority=Priority.CRITICAL)
         break
       except:
-        self.logger.log("[Scraper #{0}] Page Scraping Attempt: {1}/3".format(self.ID, retry_attempt), priority=Priority.DEBUG)
+        self.logger.log("[Scraper #{0}] Page Scraping Attempt: {1}/3".format(self.ID, retry_attempt), priority=Priority.LOW)
 
         retry_attempt += 1
 
@@ -106,14 +106,14 @@ class WebScraper():
           page = self.data_source.getPage()
           self.recreateDrivers()
 
-    self.logger.log("[Scraper #{0}] ERROR: No pages found... ".format(self.ID), priority=Priority.CRITICAL)
+    self.logger.log("[Scraper #{0}] ERROR: No pages found in the last 5 minutes! The thread will now be closing ".format(self.ID), priority=Priority.HIGH)
     try:
       self.exit_handler()
     except:
       self.logger.log("[Scraper #{0}] An error has occured while closing the driver".format(self.ID), priority=Priority.CRITICAL)
 
   def recreateDrivers(self):
-    self.logger.log("[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.CRITICAL)
+    self.logger.log("[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.NORMAL)
     if self.driver is not None:
       self.driver.close()
       self.driver.quit()
@@ -121,7 +121,7 @@ class WebScraper():
 
     # In the case that the web drivers closed on themselves, recreate them
     if self.driver is None:
-      self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID), priority=Priority.CRITICAL)
+      self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID), priority=Priority.NORMAL)
       self.driver = webdriver.Firefox(firefox_options=self.options)
 
 
@@ -132,15 +132,15 @@ class WebScraper():
   '''
   def getReferencesForPaper(self, webpage):
     references = set()
-    self.logger.log("\n[Scraper #{0}] Loading webpage in REFERENCE_DRIVER: {1}".format(self.ID, webpage), priority=Priority.HIGH)
+    self.logger.log("\n[Scraper #{0}] Loading webpage in REFERENCE_DRIVER: {1}".format(self.ID, webpage), priority=Priority.NORMAL)
 
     self.driver.get(webpage)
-    #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+    #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE: {1}".format(self.ID, self.driver.current_url), priority=Priority.NORMAL)
 
     # Wait for web page to load  
     #@#######
     self.loadWebPage(self.driver, webpage=webpage)
-    #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 2: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+    #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 2: {1}".format(self.ID, self.driver.current_url), priority=Priority.NORMAL)
     
     # Loop until no more reference pages
     more_pages = True
@@ -152,14 +152,13 @@ class WebScraper():
       more_pages = False
       
       # Retrieve info
-      #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 3: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+      #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 3: {1}".format(self.ID, self.driver.current_url), priority=Priority.NORMAL)
       self.driver.refresh()
       time.sleep(2)
-      #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 4: {1}".format(self.ID, self.driver.current_url), priority=Priority.HIGH)
+      #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 4: {1}".format(self.ID, self.driver.current_url), priority=Priority.NORMAL)
       html = self.driver.page_source
 
       titles = self.retrieveTitles(html)
-      self.logger.log("\n[Scraper #{0}] TITLES: {1}".format(self.ID, titles), priority=Priority.HIGH)
 
       references = references.union(titles)
 
@@ -167,14 +166,14 @@ class WebScraper():
       future_link = self.driver.current_url
 
       if not self.data_source.alreadyVisitedPage(future_link):
-        self.logger.log("[Scraper #{0}] Saving page for later {1}: ".format(self.ID, future_link), priority=Priority.LOW)
+        #self.logger.log("[Scraper #{0}] Saving page for later {1}: ".format(self.ID, future_link), priority=Priority.LOW)
         self.data_source.savePage(future_link)
 
       more_pages = self.pressNext(self.driver)
       if not more_pages:
-        self.logger.log("[Scraper #{0}] Found end of references. Total Count: ".format(self.ID) + str(len(references)), priority=Priority.HIGH)
+        self.logger.log("[Scraper #{0}] Found end of references. Total Count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
 
-    self.logger.log("[Scraper #{0}] Found end of references: {1}".format(self.ID, references), priority=Priority.HIGH)
+    self.logger.log("[Scraper #{0}] Found end of references: {1}".format(self.ID, references), priority=Priority.LOW)
     return references
 
   def pressNext(self, web_driver):
@@ -186,14 +185,14 @@ class WebScraper():
       if nextButton is not None:
         #driver.execute_script("document.querySelectorAll('.pagination > li:nth-child(8) > a:nth-child(1)')[0].click()")
         web_driver.execute_script("document.querySelectorAll('.pagination > li > a[aria-label=\"Next\"]')[0].click()")
-        self.logger.log("[Scraper #{0}] NEXT PAGE".format(self.ID), priority=Priority.DEBUG)
+        self.logger.log("[Scraper #{0}] NEXT PAGE".format(self.ID), priority=Priority.LOW)
         self.loadWebPage(web_driver) 
 
         return True
         
     # No 'Next' button present
     except: 
-      self.logger.log("[Scraper #{0}] No next button found".format(self.ID), priority=Priority.DEBUG)
+      self.logger.log("[Scraper #{0}] No next button found".format(self.ID), priority=Priority.LOW)
 
     return False
 
@@ -242,7 +241,7 @@ class WebScraper():
     if webpage is None:
       return None
 
-    self.logger.log("\n[Scraper #{0}] Loading webpage in PRIMARY_DRIVER: ".format(self.ID) + webpage + "\n", priority=Priority.HIGH)
+    self.logger.log("\n[Scraper #{0}] Loading webpage in PRIMARY_DRIVER: ".format(self.ID) + webpage + "\n", priority=Priority.NORMAL)
 
     self.loadWebPage(self.driver, webpage)
 
@@ -269,7 +268,7 @@ class WebScraper():
       # Title
       title = paper.select(".paper-title span[data-bind]")
       title_str = recursiveGetStringGivenList(title)
-      self.logger.log("[Scraper #{0}] Title: ".format(self.ID) + title_str, priority=Priority.HIGH)
+      self.logger.log("[Scraper #{0}] Retrieving information on paper with Title: ".format(self.ID) + title_str, priority=Priority.HIGH)
 
       # If we have already web scraped this paper, skip it
       if self.data_source.alreadyScrapedArticle(title_str):
@@ -287,12 +286,12 @@ class WebScraper():
         if len(x) > 1:
           associations.append(recursiveGetString(x[1]))
 
-      self.logger.log("Authors: " + " ".join(authors))
-      self.logger.log("Associations: " + " ".join(associations))
+      self.logger.log("Authors: " + " ".join(authors), priority=Priority.ARTICLE_DETAILS)
+      self.logger.log("Associations: " + " ".join(associations), priority=Priority.ARTICLE_DETAILS)
 
       journal = paper.select(".paper-venue li a")
       journal_str = recursiveGetStringGivenList(journal)
-      self.logger.log("Journal: " + journal_str)
+      self.logger.log("Journal: " + journal_str, priority=Priority.ARTICLE_DETAILS)
 
       #date = paper.select(".paper-date")
       #date_str = recursiveGetStringGivenList(date)
@@ -300,20 +299,20 @@ class WebScraper():
       date_str = 'Jan 1 0000'
       if len(date) > 0:
         date_str = date[0]['title']
-        self.logger.log("Date Published: " + date_str)
+        self.logger.log("Date Published: " + date_str, priority=Priority.ARTICLE_DETAILS)
       
       # Abstract
       abstract = paper.select(".paper-abstract span")
       abstract_str = recursiveGetStringGivenList(abstract)
-      self.logger.log("Abstract: " + abstract_str)
+      self.logger.log("Abstract: " + abstract_str, priority=Priority.ARTICLE_DETAILS)
 
       citationCount = paper.select(".paper-actions a.c-count span")
       
       citation_count_str = self.getCitationCount(recursiveGetStringGivenList(citationCount))
-      self.logger.log("Citation Count: " + citation_count_str)
+      self.logger.log("Citation Count: " + citation_count_str, priority=Priority.ARTICLE_DETAILS)
 
       citations = paper.select(".paper-actions a.c-count")
-      self.logger.log('')
+      self.logger.log('', priority=Priority.ARTICLE_DETAILS)
 
 
 
@@ -361,7 +360,8 @@ class WebScraper():
 
               newArticle.cites = list(self.getReferencesForPaper(link))
               newArticle.citesCount = len(newArticle.cites)
-              self.logger.log("[Scraper #{0}] -> Reference Page -> Dynamic loading completed -> Reference Start Page: {1}".format(self.ID, link), priority=Priority.LOW)
+              #self.logger.log("[Scraper #{0}] -> Reference Page -> Dynamic loading completed -> Reference Start Page: {1}".format(self.ID, link), priority=Priority.LOW)
+              self.logger.log("[Scraper #{0}] Found {1}/{2} 'cites' papers".format(self.ID, newArticle.citesCount, newArticle.referenceCount), priority=Priority.HIGH)
 
             attempt_count = -1
           except:
@@ -383,7 +383,7 @@ class WebScraper():
         newArticle.citedBy = list(self.getReferencesForPaper(link))
         num_cited_by = len(newArticle.citedBy)
         newArticle.citedByCount = num_cited_by
-        self.logger.log("Found " + str(num_cited_by) + "/" + citation_count_str + " papers")
+        self.logger.log("[Scraper #{0}] Found " + str(num_cited_by) + "/" + citation_count_str + " 'citedBy' papers", priority=Priority.HIGH)
       
       #--------------------------------------------------------------------------- END Paper CitedBy 
 
@@ -395,7 +395,7 @@ class WebScraper():
       # Add this article to the web_scraped_articles set
       self.data_source.saveScrapedArticle(title_str)
 
-      self.logger.log("\n\n-----------------------------------\n\n")
+      self.logger.log("\n\n----------------------------------------------------------------------\n\n", priority=Priority.NORMAL)
 
   def getCitationCount(self, citation_string):
     
@@ -407,6 +407,7 @@ class WebScraper():
     return "N/A"
 
   def retrieveTitles(self, html):
+
     # Initialize Beautiful Soup for this page 
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -417,7 +418,9 @@ class WebScraper():
       # Title
       title = paper.select(".paper-title span[data-bind]")
       title_str = recursiveGetStringGivenList(title)
-      self.logger.log("Title: " + title_str)
+      self.logger.log("[Scraper #{0}] Retrieved Title: {1}".format(self.ID, title_str), priority=Priority.LOW)
       titles.add(title_str)
+
+    #self.logger.log("\n[Scraper #{0}] TITLES: {1}", priority=Priority.NORMAL)
 
     return titles

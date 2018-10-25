@@ -39,4 +39,4 @@ class Article(object):
     with open(target, 'w') as outfile:
       json.dump(self.__dict__, outfile, sort_keys=True, indent=4, separators=(',', ': '))
 
-      print("Saved " + self.title + " to " + target)
+      print("\nSaved " + self.title + " to " + target)
