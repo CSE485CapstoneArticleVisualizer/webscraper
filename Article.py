@@ -13,7 +13,11 @@ class Article(object):
     self.citationCount = citationCount
     self.citedBy = []
     self.citedByCount = 0
-    
+
+    self.referenceCount = 0
+    self.cites = []
+    self.citesCount = 0
+
   # def addCitedBy(self, paper):
   #   self.citedBy.add(paper)
   

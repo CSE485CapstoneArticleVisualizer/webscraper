@@ -193,7 +193,7 @@ class WebScraper():
         
     # No 'Next' button present
     except: 
-      self.logger.log("No next button found", priority=Priority.DEBUG)
+      self.logger.log("[Scraper #{0}] No next button found".format(self.ID), priority=Priority.DEBUG)
 
     return False
 
@@ -265,6 +265,7 @@ class WebScraper():
     for paper in papers:
       if Globals.end_threads:
         return None
+
       # Title
       title = paper.select(".paper-title span[data-bind]")
       title_str = recursiveGetStringGivenList(title)
@@ -314,15 +315,82 @@ class WebScraper():
       citations = paper.select(".paper-actions a.c-count")
       self.logger.log('')
 
+
+
+
+
+
+
+
       # Generate and save the new article
       newArticle = Article(title=title_str, abstract=abstract_str, authors=authors, journal=journal_str, date=date_str, citationCount=citation_count_str)
+      
+      #--------------------------------------------------------------------------- Paper References 
+      paper_anchor = paper.select(".paper-title a")
+      try:
+        #print("[Scraper #{0}] CURRENT DRIVER LOCATION 1: ".format(self.ID) + self.driver.current_url)
+        link = 'https://academic.microsoft.com/' + paper_anchor[0]['href']
+        self.driver.get(link)
+        #print("[Scraper #{0}] CURRENT DRIVER LOCATION 2: ".format(self.ID) + self.driver.current_url)
+
+        attempt_count = 1
+        max_attempts = 2
+        while attempt_count != -1 and attempt_count <= max_attempts and not Globals.end_threads:
+          try:
+            elem = WebDriverWait(self.driver, 2).until(
+              EC.presence_of_element_located((By.CSS_SELECTOR, 'div.pure-u-md-4-24:nth-child(1) > a:nth-child(2)'))
+              #EC.presence_of_element_located((By.CSS_SELECTOR, 'ma-ulist.ulist-paper:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > a:nth-child(1)'))
+              
+            )
+            reference_count_elem = WebDriverWait(self.driver, 1).until(
+              EC.presence_of_element_located((By.CSS_SELECTOR, 'div.pure-u-md-4-24:nth-child(1) > h1:nth-child(1)'))
+              #EC.presence_of_element_located((By.CSS_SELECTOR, 'ma-ulist.ulist-paper:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > a:nth-child(1)'))
+            )
+            newArticle.referenceCount = self.getCitationCount(reference_count_elem.text)
+
+            if elem is not None:
+              #self.logger.log("[Scraper #{0}] CLICKED ON REFERENCE".format(self.ID), priority=Priority.DEBUG)
+              self.driver.execute_script("document.querySelectorAll('div.pure-u-md-4-24:nth-child(1) > a:nth-child(2)')[0].click()")
+              #time.sleep(2)
+              self.loadWebPage(self.driver) 
+              #time.sleep(2)
+              #self.logger.log("[Scraper #{0}] SUCCESSFULLY LOADED REFERENCE".format(self.ID), priority=Priority.DEBUG)
+              #print("[Scraper #{0}] CURRENT DRIVER LOCATION 3: ".format(self.ID) + self.driver.current_url)
+
+              link = self.driver.current_url
+
+              newArticle.cites = list(self.getReferencesForPaper(link))
+              newArticle.citesCount = len(newArticle.cites)
+              self.logger.log("[Scraper #{0}] -> Reference Page -> Dynamic loading completed -> Reference Start Page: {1}".format(self.ID, link), priority=Priority.LOW)
+
+            attempt_count = -1
+          except:
+            self.logger.log(("[Scraper #{0}] -> Reference Page -> Failed to load page for attempt #".format(self.ID)) + str(attempt_count) + "/" + str(max_attempts) + "...", priority=Priority.DEBUG)
+            attempt_count += 1
+
+            self.driver.refresh()
+            time.sleep(2)
+            continue
+
+      except:
+        self.logger.log(("[Scraper #{0}] Failed to load primary page for paper").format(self.ID), priority=Priority.CRITICAL)
+
+
+
+      #--------------------------------------------------------------------------- Paper CitedBy
       if len(citations) > 0:
         link = 'https://academic.microsoft.com/' + citations[0]['href']
         newArticle.citedBy = list(self.getReferencesForPaper(link))
         num_cited_by = len(newArticle.citedBy)
         newArticle.citedByCount = num_cited_by
         self.logger.log("Found " + str(num_cited_by) + "/" + citation_count_str + " papers")
+      
+      #--------------------------------------------------------------------------- END Paper CitedBy 
+
       newArticle.save()
+
+
+
 
       # Add this article to the web_scraped_articles set
       self.data_source.saveScrapedArticle(title_str)

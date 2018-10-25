@@ -150,7 +150,7 @@ class WebScraperDataSource():
 
 
   def saveToBeVisitedToDisk(self, retain=100):
-    print("\n\nSAVING %d to_be_visited_pages TO DISK\n\n" % retain)
+    print("\n\n[DATA SOURCE] SAVING %d to_be_visited_pages TO DISK\n\n" % retain)
 
     self.lock_to_be_visited_pages.acquire()
     retain_set = set()
