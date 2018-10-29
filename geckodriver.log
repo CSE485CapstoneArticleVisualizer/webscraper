@@ -7611,3 +7611,26 @@ JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js,
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1540773431744	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.nn3ScFFKbwgk"
+*** You are running in headless mode.
+1540773433918	Marionette	INFO	Listening on port 63090
+1540773433965	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1540774132337	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.tvjC9gMM1gxG"
+*** You are running in headless mode.
+1540774134960	Marionette	INFO	Listening on port 49361
+1540774135054	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+ion

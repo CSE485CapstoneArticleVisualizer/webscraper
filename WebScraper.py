@@ -154,7 +154,7 @@ class WebScraper():
       # Retrieve info
       #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 3: {1}".format(self.ID, self.driver.current_url), priority=Priority.NORMAL)
       self.driver.refresh()
-      time.sleep(2)
+      time.sleep(1)
       #self.logger.log("\n[Scraper #{0}] CURRENT WEBPAGE 4: {1}".format(self.ID, self.driver.current_url), priority=Priority.NORMAL)
       html = self.driver.page_source
 
@@ -170,6 +170,8 @@ class WebScraper():
         self.data_source.savePage(future_link)
 
       more_pages = self.pressNext(self.driver)
+      self.logger.log("[Scraper #{0}] Next page...".format(self.ID), priority=Priority.NORMAL)
+
       if not more_pages:
         self.logger.log("[Scraper #{0}] Found end of references. Total Count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
 
@@ -218,7 +220,7 @@ class WebScraper():
     max_attempts = 2
     while attempt_count != -1 and attempt_count <= max_attempts and not Globals.end_threads:
       try:
-        _ = WebDriverWait(web_driver, 3).until(
+        _ = WebDriverWait(web_driver, 2).until(
             #EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main section.paper-tile'))
             EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats:nth-child(2)'))
             #EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats'))
@@ -230,7 +232,7 @@ class WebScraper():
         attempt_count += 1
 
         web_driver.refresh()
-        time.sleep(2)
+        time.sleep(1)
         continue
         
 
@@ -369,7 +371,7 @@ class WebScraper():
             attempt_count += 1
 
             self.driver.refresh()
-            time.sleep(2)
+            time.sleep(1)
             continue
 
       except:
@@ -383,7 +385,7 @@ class WebScraper():
         newArticle.citedBy = list(self.getReferencesForPaper(link))
         num_cited_by = len(newArticle.citedBy)
         newArticle.citedByCount = num_cited_by
-        self.logger.log("[Scraper #{0}] Found " + str(num_cited_by) + "/" + citation_count_str + " 'citedBy' papers", priority=Priority.HIGH)
+        self.logger.log("[Scraper #{0}] Found {1}/{2} 'citedBy' papers".format(self.ID, num_cited_by, citation_count_str), priority=Priority.HIGH)
       
       #--------------------------------------------------------------------------- END Paper CitedBy 
 

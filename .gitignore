@@ -1,4 +1,6 @@
 .vscode/*
+./geckodriver.log
+./debug.log
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -9,5 +11,4 @@ visited_pages.json
 web_scraped_articles.json
 to_be_visited_pages.txt
 *.pyc
-geckodriver.log
-debug.log
+ignore_me
