@@ -109,6 +109,8 @@ class WebScraper():
     self.logger.log("[Scraper #{0}] ERROR: No pages found in the last 5 minutes! The thread will now be closing ".format(self.ID), priority=Priority.HIGH)
     try:
       self.exit_handler()
+      self.logger.log("Successfully closed scraper #{0}".format(self.ID), priority=Priority.CRITICAL)
+
     except:
       self.logger.log("[Scraper #{0}] An error has occured while closing the driver".format(self.ID), priority=Priority.CRITICAL)
 
