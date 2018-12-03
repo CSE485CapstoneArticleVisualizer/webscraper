@@ -92,13 +92,13 @@ class WebScraper():
         self.logger.log("\n------------------------------------\nKeyboard Interrupt Detected", priority=Priority.CRITICAL)
         self.logger.log("[Scraper #{0}] Exit Save Thread: {1}".format(self.ID, end_save_thread), priority=Priority.CRITICAL)
         break
-      except:
+      except Exception as e:
         self.logger.log("[Scraper #{0}] Page Scraping Attempt: {1}/3".format(self.ID, retry_attempt), priority=Priority.LOW)
 
         retry_attempt += 1
 
         self.data_source.savePage(page)
-        self.logger.log("[Scraper #{0}] An error has occured while parsing this page: {1}".format(self.ID, page), priority=Priority.DEBUG)
+        self.logger.log("[Scraper #{0}] An error has occured while parsing this page: {1}\n{2}".format(self.ID, page, str(e)), priority=Priority.DEBUG)
 
         # After 3 reattempts, recreate the web drivers to make sure they aren't glitching out
         if retry_attempt > 3:
@@ -111,8 +111,8 @@ class WebScraper():
       self.exit_handler()
       self.logger.log("Successfully closed scraper #{0}".format(self.ID), priority=Priority.CRITICAL)
 
-    except:
-      self.logger.log("[Scraper #{0}] An error has occured while closing the driver".format(self.ID), priority=Priority.CRITICAL)
+    except Exception as e:
+      self.logger.log("[Scraper #{0}] An error has occured while closing the driver:\n{}".format(self.ID, str(e)), priority=Priority.CRITICAL)
 
   def recreateDrivers(self):
     self.logger.log("[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.NORMAL)
@@ -195,8 +195,8 @@ class WebScraper():
         return True
         
     # No 'Next' button present
-    except: 
-      self.logger.log("[Scraper #{0}] No next button found".format(self.ID), priority=Priority.LOW)
+    except Exception as e: 
+      self.logger.log("[Scraper #{0}] No next button found:{}".format(self.ID, str(e)), priority=Priority.LOW)
 
     return False
 
@@ -229,7 +229,7 @@ class WebScraper():
         )
         attempt_count = -1
         self.logger.log("[Scraper #{0}] Dynamic loading completed".format(self.ID), priority=Priority.LOW)
-      except:
+      except Exception as e:
         self.logger.log(("[Scraper #{0}] Failed to load page for attempt #".format(self.ID)) + str(attempt_count) + "/" + str(max_attempts) + "...", priority=Priority.DEBUG)
         attempt_count += 1
 
@@ -368,16 +368,16 @@ class WebScraper():
               self.logger.log("[Scraper #{0}] Found {1}/{2} 'cites' papers".format(self.ID, newArticle.citesCount, newArticle.referenceCount), priority=Priority.HIGH)
 
             attempt_count = -1
-          except:
-            self.logger.log(("[Scraper #{0}] -> Reference Page -> Failed to load page for attempt #".format(self.ID)) + str(attempt_count) + "/" + str(max_attempts) + "...", priority=Priority.DEBUG)
+          except Exception as e:
+            self.logger.log(("[Scraper #{0}] -> Reference Page -> Failed to load page for attempt #".format(self.ID)) + str(attempt_count) + "/" + str(max_attempts) + "...\n" + str(e), priority=Priority.DEBUG)
             attempt_count += 1
 
             self.driver.refresh()
             time.sleep(1)
             continue
 
-      except:
-        self.logger.log(("[Scraper #{0}] Failed to load primary page for paper").format(self.ID), priority=Priority.CRITICAL)
+      except Exception as e:
+        self.logger.log(("[Scraper #{0}] Failed to load primary page for paper:\n{1}").format(self.ID, str(e)), priority=Priority.CRITICAL)
 
 
 

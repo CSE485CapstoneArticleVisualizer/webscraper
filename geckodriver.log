@@ -7634,3 +7634,15 @@ JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js 
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
 JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
 ion
+1543828499626	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile.fbQel8T4ekaG"
+*** You are running in headless mode.
+1543828501504	Marionette	INFO	Listening on port 55281
+1543828501740	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543828501773	Marionette	INFO	Stopped listening on port 55281
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+[Parent 17516, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 17636, Chrome[_CChildThread] WARNINhG: pipe error: i109: file z:/build/build/src/ipc/chromium/src/clhrome/common/ipc_channel_win.cc, line 346d
+ 16160, Chrome_ChildThread] WARNING: pipe error: 109: file z:/[build/buCild/srhcild 17472, Chrome_ChildThread] WARNING:/ipc pipe /error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_chchannrJavaScript error: resource://gre/modules/Soeqmium/srllite.jsm, line 841: Error: Connection is not open._c
+w/chrome/common/ipc_cinhannel_win.cc, line 346.
+cc, line 346
+[
