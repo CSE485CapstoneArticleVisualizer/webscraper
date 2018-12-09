@@ -7645,4 +7645,73 @@ JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: Type
  16160, Chrome_ChildThread] WARNING: pipe error: 109: file z:/[build/buCild/srhcild 17472, Chrome_ChildThread] WARNING:/ipc pipe /error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_chchannrJavaScript error: resource://gre/modules/Soeqmium/srllite.jsm, line 841: Error: Connection is not open._c
 w/chrome/common/ipc_cinhannel_win.cc, line 346.
 cc, line 346
-[
+[1544397772677	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.0twXz9ogiB6o"
+*** You are running in headless mode.
+1544397773680	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.VMryGkUqbkN4"
+*** You are running in headless mode.
+1544397775675	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.iy9qC9vGInqY"
+*** You are running in headless mode.
+1544397776680	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.j0UzTbBE6Lif"
+*** You are running in headless mode.
+1544397777006	Marionette	INFO	Listening on port 43722
+1544397777087	Marionette	INFO	Listening on port 35095
+1544397777100	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544397777102	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544397777699	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.4UbcN9gYt5cO"
+*** You are running in headless mode.
+1544397777759	Marionette	INFO	Listening on port 32968
+1544397777783	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544397778704	Marionette	INFO	Listening on port 35786
+1544397778810	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544397779475	Marionette	INFO	Listening on port 40865
+1544397779508	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+console.error: BroadcastService: 
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement

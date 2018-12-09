@@ -112,7 +112,7 @@ class WebScraper():
       self.logger.log("Successfully closed scraper #{0}".format(self.ID), priority=Priority.CRITICAL)
 
     except Exception as e:
-      self.logger.log("[Scraper #{0}] An error has occured while closing the driver:\n{}".format(self.ID, str(e)), priority=Priority.CRITICAL)
+      self.logger.log("[Scraper #{0}] An error has occured while closing the driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
 
   def recreateDrivers(self):
     self.logger.log("[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.NORMAL)
@@ -196,7 +196,7 @@ class WebScraper():
         
     # No 'Next' button present
     except Exception as e: 
-      self.logger.log("[Scraper #{0}] No next button found:{}".format(self.ID, str(e)), priority=Priority.LOW)
+      self.logger.log("[Scraper #{0}] No next button found:{1}".format(self.ID, str(e)), priority=Priority.LOW)
 
     return False
 
