@@ -93,7 +93,7 @@ class WebScraper():
         self.logger.log("[Scraper #{0}] Exit Save Thread: {1}".format(self.ID, end_save_thread), priority=Priority.CRITICAL)
         break
       except Exception as e:
-        self.logger.log("[Scraper #{0}] Page Scraping Attempt: {1}/3".format(self.ID, retry_attempt), priority=Priority.LOW)
+        self.logger.log("[Scraper #{0}] Page Scraping Attempt: {1}/3.... {2}".format(self.ID, retry_attempt, str(e)), priority=Priority.LOW)
 
         retry_attempt += 1
 
@@ -121,11 +121,15 @@ class WebScraper():
       self.driver.quit()
       self.driver = None
 
+    time.sleep(0.5)
     # In the case that the web drivers closed on themselves, recreate them
-    if self.driver is None:
+    #if self.driver is None:
+    try:
       self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID), priority=Priority.NORMAL)
       self.driver = webdriver.Firefox(firefox_options=self.options)
-
+    except Exception as e:
+      self.logger.log("[Scraper #{0}] An error has occured while reopening the primary driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
+      self.recreateDrivers()
 
 
 
