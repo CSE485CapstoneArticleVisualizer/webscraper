@@ -124,10 +124,12 @@ class WebScraper():
     time.sleep(0.5)
     # In the case that the web drivers closed on themselves, recreate them
     #if self.driver is None:
-    self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID), priority=Priority.NORMAL)
-    self.driver = webdriver.Firefox(firefox_options=self.options)
-    
-
+    try:
+      self.logger.log("[Scraper #{0}] Creating primary driver...".format(self.ID), priority=Priority.NORMAL)
+      self.driver = webdriver.Firefox(firefox_options=self.options)
+    except Exception as e:
+      self.logger.log("[Scraper #{0}] An error has occured while reopening the primary driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
+      self.recreateDrivers()
 
 
 
