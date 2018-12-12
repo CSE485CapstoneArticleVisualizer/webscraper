@@ -175,8 +175,8 @@ class WebScraper():
         #self.logger.log("[Scraper #{0}] Saving page for later {1}: ".format(self.ID, future_link), priority=Priority.LOW)
         self.data_source.savePage(future_link)
 
+      self.logger.log("[Scraper #{0}] Attempting to find next page...".format(self.ID), priority=Priority.NORMAL)
       more_pages = self.pressNext(self.driver)
-      self.logger.log("[Scraper #{0}] Next page...".format(self.ID), priority=Priority.NORMAL)
 
       if not more_pages:
         self.logger.log("[Scraper #{0}] Found end of references. Total Count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
@@ -193,7 +193,7 @@ class WebScraper():
       if nextButton is not None:
         #driver.execute_script("document.querySelectorAll('.pagination > li:nth-child(8) > a:nth-child(1)')[0].click()")
         web_driver.execute_script("document.querySelectorAll('.pagination > li > a[aria-label=\"Next\"]')[0].click()")
-        self.logger.log("[Scraper #{0}] NEXT PAGE".format(self.ID), priority=Priority.LOW)
+        self.logger.log("[Scraper #{0}] FOUND NEXT PAGE".format(self.ID), priority=Priority.LOW)
         self.loadWebPage(web_driver) 
 
         return True
