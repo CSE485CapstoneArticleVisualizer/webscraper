@@ -93,7 +93,7 @@ class WebScraper():
         self.logger.log("[Scraper #{0}] Exit Save Thread: {1}".format(self.ID, end_save_thread), priority=Priority.CRITICAL)
         break
       except Exception as e:
-        self.logger.log("[Scraper #{0}] Page Scraping Attempt: {1}/3.... {2}".format(self.ID, retry_attempt, str(e)), priority=Priority.LOW)
+        self.logger.log("[Scraper #{0}] Page Scraping Attempt FAILED: {1}/3.... {2}".format(self.ID, retry_attempt, str(e)), priority=Priority.DEBUG)
 
         retry_attempt += 1
 
@@ -105,6 +105,7 @@ class WebScraper():
           retry_attempt = 0
           page = self.data_source.getPage()
           self.recreateDrivers()
+    #### END WHILE LOOP ####
 
     self.logger.log("[Scraper #{0}] ERROR: No pages found in the last 5 minutes! The thread will now be closing ".format(self.ID), priority=Priority.HIGH)
     try:
@@ -175,13 +176,10 @@ class WebScraper():
         #self.logger.log("[Scraper #{0}] Saving page for later {1}: ".format(self.ID, future_link), priority=Priority.LOW)
         self.data_source.savePage(future_link)
 
+      self.logger.log("[Scraper #{0}] Attempting to find next page...".format(self.ID), priority=Priority.NORMAL)
       more_pages = self.pressNext(self.driver)
-      self.logger.log("[Scraper #{0}] Next page...".format(self.ID), priority=Priority.NORMAL)
 
-      if not more_pages:
-        self.logger.log("[Scraper #{0}] Found end of references. Total Count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
-
-    self.logger.log("[Scraper #{0}] Found end of references: {1}".format(self.ID, references), priority=Priority.LOW)
+    self.logger.log("[Scraper #{0}] Found end of references. Total Count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
     return references
 
   def pressNext(self, web_driver):
@@ -193,7 +191,7 @@ class WebScraper():
       if nextButton is not None:
         #driver.execute_script("document.querySelectorAll('.pagination > li:nth-child(8) > a:nth-child(1)')[0].click()")
         web_driver.execute_script("document.querySelectorAll('.pagination > li > a[aria-label=\"Next\"]')[0].click()")
-        self.logger.log("[Scraper #{0}] NEXT PAGE".format(self.ID), priority=Priority.LOW)
+        self.logger.log("[Scraper #{0}] FOUND NEXT PAGE".format(self.ID), priority=Priority.LOW)
         self.loadWebPage(web_driver) 
 
         return True
@@ -234,7 +232,7 @@ class WebScraper():
         attempt_count = -1
         self.logger.log("[Scraper #{0}] Dynamic loading completed".format(self.ID), priority=Priority.LOW)
       except Exception as e:
-        self.logger.log(("[Scraper #{0}] Failed to load page for attempt #".format(self.ID)) + str(attempt_count) + "/" + str(max_attempts) + "...", priority=Priority.DEBUG)
+        self.logger.log(("[Scraper #{0}] Failed to load page for attempt #{1}/{2}...".format(self.ID, str(attempt_count), str(max_attempts))), priority=Priority.DEBUG)
         attempt_count += 1
 
         web_driver.refresh()
@@ -249,7 +247,7 @@ class WebScraper():
     if webpage is None:
       return None
 
-    self.logger.log("\n[Scraper #{0}] Loading webpage in PRIMARY_DRIVER: ".format(self.ID) + webpage + "\n", priority=Priority.NORMAL)
+    self.logger.log("\n[Scraper #{0}] Loading webpage in PRIMARY_DRIVER: {1}\n".format(self.ID, webpage), priority=Priority.NORMAL)
 
     self.loadWebPage(self.driver, webpage)
 
@@ -276,7 +274,7 @@ class WebScraper():
       # Title
       title = paper.select(".paper-title span[data-bind]")
       title_str = recursiveGetStringGivenList(title)
-      self.logger.log("[Scraper #{0}] Retrieving information on paper with Title: ".format(self.ID) + title_str, priority=Priority.HIGH)
+      self.logger.log("[Scraper #{0}] Retrieving information on paper with Title: {1}".format(self.ID, title_str), priority=Priority.NORMAL)
 
       # If we have already web scraped this paper, skip it
       if self.data_source.alreadyScrapedArticle(title_str):
