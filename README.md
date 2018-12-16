@@ -31,7 +31,7 @@ You can edit various aspects of the *.env* file to change how the program works.
 NUM_THREADS = 5
 ```
 
-You can also choose what kind of messages the program will log to the screen:
+You can also choose what kind of messages the program will log to the screen (more details in Logging section):
 ``` 
 DEBUG_ENABLED = "off"
 LOW_ENABLED = "off"
@@ -51,15 +51,15 @@ DATA_SOURCE_LOGGING_ENABLED = "off"
 ```
 
 
-### Log Messages List
+## LOGGING
 Below is are the messages that will be printed out if **LOW**, **NORMAL**, **HIGH**, or **CRITICAL** logs are enabled.
 
-#### DEBUG Priority List - (Normal to experience these issues.)
+### DEBUG Priority List - (Normal to experience these issues.)
 *  "[Scraper #{0}] Page Scraping Attempt FAILED: {1}/3.... {2}"
 *  "[Scraper #{0}] An error has occured while parsing this page: {1}\n{2}"
 *  "[Scraper #{0}] Failed to load page for attempt #{1}/{2}..."
 
-#### LOW Priority List - (Unsuprising messages that aren't very important and may be highly repetitive.)
+### LOW Priority List - (Unsuprising messages that aren't very important and may be highly repetitive.)
 *  "Started scraper #{0}"
 *  "[Scraper #{0}] [Attempt {1}/{2}] Waiting for page to become available..."
 *  "[Scraper #{0}] Found end of references: {1}"
@@ -68,7 +68,7 @@ Below is are the messages that will be printed out if **LOW**, **NORMAL**, **HIG
 *  "[Scraper #{0}] Dynamic loading completed"
 *  "\n[Scraper #{0}] Loading webpage in PRIMARY_DRIVER: {1}\n"
 
-#### NORMAL Priority List - (Typical expected operations. Not as repetitive as other operations.)
+### NORMAL Priority List - (Typical expected operations. Not as repetitive as other operations.)
 *  "[Scraper #{0}] Successfully scraped page {1}"
 *  "[Scraper #{0}] Recreating web drivers from scratch..."
 *  "[Scraper #{0}] Creating primary driver..."
@@ -77,10 +77,10 @@ Below is are the messages that will be printed out if **LOW**, **NORMAL**, **HIG
 *  "[Scraper #{0}] Found end of references. Total Count: {1}"
 *  "[Scraper #{0}] Retrieving information on paper with Title: {1}"
 
-#### HIGH Priority List - (Did not expect this to occur, but not vital to program.)
+### HIGH Priority List - (Did not expect this to occur, but not vital to program.)
 *  "[Scraper #{0}] ERROR: No pages found in the last 5 minutes! The thread will now be closing "
 
-#### CRITICAL Priority List - (These have large impact to program operation.)
+### CRITICAL Priority List - (These have large impact to program operation.)
 *  "\n------------------------------------\nKeyboard Interrupt Detected"
 *  "[Scraper #{0}] Exit Save Thread: {1}"
 *  "Successfully closed scraper #{0}"
