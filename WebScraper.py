@@ -69,7 +69,7 @@ class WebScraper():
       wait_count = 0 # A page was made available
       # Recreate drivers every 20 web scraping attempts (Prevent memory leak)
       total_attempts += 1
-      if total_attempts == 20:
+      if total_attempts == 0:
         self.recreateDrivers()
         total_attempts = 0
 
@@ -132,8 +132,6 @@ class WebScraper():
       self.logger.log("[Scraper #{0}] An error has occured while reopening the primary driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
       self.recreateDrivers()
 
-
-
   '''
   Simply retrieves the titles of the papers that cite the designated paper
   '''
@@ -154,7 +152,7 @@ class WebScraper():
     while more_pages:
       if Globals.end_threads:
         return None
-
+      self.logger.log("[Scraper #{0}] Found next page...".format(self.ID), priority=Priority.NORMAL)
 
       more_pages = False
       
@@ -176,7 +174,7 @@ class WebScraper():
         #self.logger.log("[Scraper #{0}] Saving page for later {1}: ".format(self.ID, future_link), priority=Priority.LOW)
         self.data_source.savePage(future_link)
 
-      self.logger.log("[Scraper #{0}] Attempting to find next page...".format(self.ID), priority=Priority.NORMAL)
+      self.logger.log("[Scraper #{0}] Attempting to find next page... Current reference count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
       more_pages = self.pressNext(self.driver)
 
     self.logger.log("[Scraper #{0}] Found end of references. Total Count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
