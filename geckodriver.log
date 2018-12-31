@@ -7853,3 +7853,327 @@ init@resource://activity-stream/lib/SectionsManager.jsm:119:5
 [Child 4948, C[Parent 15760, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 [Child 6944, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 [Child 6944, Chrome_CJavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
+1546223049879	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.Gcu3FBhFtKYf"
+*** You are running in headless mode.
+1546223050438	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546223050438	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546223052024	Marionette	INFO	Listening on port 53554
+1546223052096	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1546227602636	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.8wGCRTnbq1cP"
+*** You are running in headless mode.
+1546227603211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546227603211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546227604970	Marionette	INFO	Listening on port 59101
+1546227605357	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+dler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-setting  receivedBroadcastMessconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+or: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw err  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+ding extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546227829149	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546227831106	Marionette	INFO	Listening on port 53939
+1546227831289	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546227833007	addons.web1546227835335	Marionette	INFO	Listening on port 54009
+1546227835673	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 8496, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 8496, Ch1546227841980	Marionette	INFO	Listening on port 54046
+1546227842441	Marionette	WARN	TLS certificate errors will be ignored for this session
+1546227888956	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.3ROcWNTMUlKF"
+*** You are running in headless mode.
+1546227889559	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546227889560	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546227891595	Marionette	INFO	Listening on port 54489
+1546227891712	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546227892894	addons.web1546227894390	Marionette	INFO	Listening on port 54557
+1546227894457	Marionette	WARN	TLS certificate errors will be ignored for this session
+1546227895612	Marionette	INFO	Listening on port 54584
+1546227895988	Marionette	WARN	TLS certificate errors will be ignored for this session
+1546227946894	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.oGfCrFxps3Aj"
+*** You are running in headless mode.
+1546227947485	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546227947485	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546227949400	Marionette	INFO	Listening on port 54982
+1546227949618	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+error: BroadcastService: 
+  receivedBroadcastMconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-seconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunctioJavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1546228133741	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.bTfwuwH6psLc"
+*** You are running in headless mode.
+1546228134328	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546228134329	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546228136373	Marionette	INFO	Listening on port 57276
+1546228136500	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1546228260558	Marionette	INFO	Stopped listening on port 57276
+[Parent 6968, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 836, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 836,[Parent 6968, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 3028, Chrome_ChildThread] WARNING: pipe error: 109: [GFX1-]: Receive IPC close with reason=A/chrome/common/ipc_channel_win.cc, line 346
+[Child 3028[Parent 6968, Gec[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+d/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 15204, Chrome_ChildThread] WARNING:[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+c/chrome/common/ipc_channel_win.cc, line 346
+[Child 15204,\\Local\\Temp\\rust_mozprofile.H4riB7cYGUGy"
+*** You are running in headless mode.
+1546228233202	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546228233203	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546228236463	Marionette	INFO	Listening on port 58617
+1546228236731	Marionette	WARN	TLS certificate errors will be ignored for this session
+1546228303038	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.9YFM8irvGNyI"
+*** You are running in headless mode.
+1546228303749	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546228303749	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546228309948	Marionette	INFO	Listening on port 59221
+1546228310098	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+ding extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546228308906	addons.web1546228313032	Marionette	INFO	Listening on port 59273
+1546228313259	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+87e7e32fcae2.js, line 1: TypeError: d is null
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1546228797667	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.FvagoULcGW36"
+*** You are running in headless mode.
+1546228798274	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546228798274	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546228800368	Marionette	INFO	Listening on port 64538
+1546228800438	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+1546228801945	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546228801945	addons.web1546228802232	Marionette	INFO	Listening on port 64562
+1546228803381	Marionette	INFO	Listening on port 64602
+1546228803816	Marionette	WARN	TL1546228804060	Marionette	INFO	Listening on port 64634
+1546228804211	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown[Child 17796, 
+Chrome_ChildThread] WARNING: pipe error: 232: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 513
+1546228835201	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.tll9fqgpyz9L"
+*** You are running in headless mode.
+1546228835984	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546228835984	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546228838260	Marionette	INFO	Listening on port 64907
+1546228838424	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+ttings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+41713	Marionette	INFO	Listening on port 64998
+1546228841829	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1546229049318	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.anEQ1TSBFycs"
+*** You are running in headless mode.
+1546229050304	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.mhYKTqFm9FVt"
+*** You are running in headless mode.
+1546229050905	addons.webextension.screenshots@mozilla.org	1546229051713	Marionette	INFO	Listening on port 50656
+1546229052350	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+dler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+resource://services-settings/remote-settings.jsconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1546229246140	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\alexn\\AppData\\Local\\Temp\\rust_mozprofile.HWHaviwYpQVf"
+*** You are running in headless mode.
+1546229246842	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546229246843	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546229250537	Marionette	INFO	Listening on port 52544
+1546229250619	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+dler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollconsole.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+ding extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1546229364056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1546229370202	Marionette	INFO	Listening on port 53838
+[Parent 22136, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chJavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js, line 4: unreachable code after return statement
+JavaScript warning: https://msa-cdn.azureedge.net/scripts/knockout-3.5.0beta.js line 74 > Function, line 4: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:75console.[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+ndler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+e: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+

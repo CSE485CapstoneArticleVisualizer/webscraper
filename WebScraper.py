@@ -34,7 +34,9 @@ class WebScraper():
   def __init__(self, data_source, logger, ID=0):
 
     logger.log("Initializing WebScraper #{0}...".format(ID))
-    self.RESET_COUNT = 500
+    self.ARTICLE_RESET_COUNT = 20 # After X articles
+    self.RESET_COUNT = 500 # After loading 500 webpages reset
+    self.MAX_CITATION_COUNT = 5000
     self.loadCount = 0
     self.ID = ID
     self.logger = logger
@@ -69,7 +71,7 @@ class WebScraper():
       wait_count = 0 # A page was made available
       # Recreate drivers every 20 web scraping attempts (Prevent memory leak)
       total_attempts += 1
-      if total_attempts == 0:
+      if total_attempts >= self.ARTICLE_RESET_COUNT:
         self.recreateDrivers()
         total_attempts = 0
 
@@ -135,8 +137,9 @@ class WebScraper():
   '''
   Simply retrieves the titles of the papers that cite the designated paper
   '''
-  def getReferencesForPaper(self, webpage):
+  def getReferencesForPaper(self, webpage, expected_count):
     references = set()
+
     self.logger.log("\n[Scraper #{0}] Loading webpage in REFERENCE_DRIVER: {1}".format(self.ID, webpage), priority=Priority.NORMAL)
 
     self.driver.get(webpage)
@@ -149,7 +152,7 @@ class WebScraper():
     
     # Loop until no more reference pages
     more_pages = True
-    while more_pages:
+    while more_pages and len(references) < self.MAX_CITATION_COUNT:
       if Globals.end_threads:
         return None
       self.logger.log("[Scraper #{0}] Found next page...".format(self.ID), priority=Priority.NORMAL)
@@ -174,7 +177,7 @@ class WebScraper():
         #self.logger.log("[Scraper #{0}] Saving page for later {1}: ".format(self.ID, future_link), priority=Priority.LOW)
         self.data_source.savePage(future_link)
 
-      self.logger.log("[Scraper #{0}] Attempting to find next page... Current reference count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
+      self.logger.log("[Scraper #{0}] Attempting to find next page... Current reference count: {1}/{2}... MAX {3}".format(self.ID, len(references), expected_count, self.MAX_CITATION_COUNT), priority=Priority.NORMAL)
       more_pages = self.pressNext(self.driver)
 
     self.logger.log("[Scraper #{0}] Found end of references. Total Count: {1}".format(self.ID, len(references)), priority=Priority.NORMAL)
@@ -237,6 +240,12 @@ class WebScraper():
         time.sleep(1)
         continue
         
+  def castStringToInt(self, string):
+    try:
+      return int(string.replace(',',''))
+    except Exception as e:
+      print("Exception occured while casting string {} to int: {}".format(string, e))
+      return -1
 
   '''
     Retrieves all of the information for each paper on the page
@@ -362,7 +371,7 @@ class WebScraper():
 
               link = self.driver.current_url
 
-              newArticle.cites = list(self.getReferencesForPaper(link))
+              newArticle.cites = list(self.getReferencesForPaper(link, expected_count=self.castStringToInt(newArticle.referenceCount)))
               newArticle.citesCount = len(newArticle.cites)
               #self.logger.log("[Scraper #{0}] -> Reference Page -> Dynamic loading completed -> Reference Start Page: {1}".format(self.ID, link), priority=Priority.LOW)
               self.logger.log("[Scraper #{0}] Found {1}/{2} 'cites' papers".format(self.ID, newArticle.citesCount, newArticle.referenceCount), priority=Priority.HIGH)
@@ -384,7 +393,7 @@ class WebScraper():
       #--------------------------------------------------------------------------- Paper CitedBy
       if len(citations) > 0:
         link = 'https://academic.microsoft.com/' + citations[0]['href']
-        newArticle.citedBy = list(self.getReferencesForPaper(link))
+        newArticle.citedBy = list(self.getReferencesForPaper(link, expected_count=self.castStringToInt(citation_count_str)))
         num_cited_by = len(newArticle.citedBy)
         newArticle.citedByCount = num_cited_by
         self.logger.log("[Scraper #{0}] Found {1}/{2} 'citedBy' papers".format(self.ID, num_cited_by, citation_count_str), priority=Priority.HIGH)
