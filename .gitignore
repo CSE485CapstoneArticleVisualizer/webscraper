@@ -10,5 +10,6 @@ to_be_visited_pages.json
 visited_pages.json
 web_scraped_articles.json
 to_be_visited_pages.txt
+geckodriver.log
 *.pyc
 ignore_me

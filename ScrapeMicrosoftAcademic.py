@@ -31,7 +31,7 @@ def exit_handler():
   timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
   print(timestamp)
   print("Program exit.")
-  print("MAKE SURE TO KILL ALL FIREFOX INSTANCES FROM THE TERMINAL IF THE DRIVER FAILED TO BE KILLED. OTHERWISE THERE WILL BE A MEMORY LEAK.")
+  print("MAKE SURE TO KILL ALL FIREFOX INSTANCES FROM THE TERMINAL IF THE DRIVER FAILED TO BE KILLED. OTHERWISE THERE WILL BE A MEMORY LEAK.\n\n If you are on windows run 'Taskkill /IM firefox.exe /F' in the command prompt to kill all firefox instances.")
 
 def create_scraper(ID):
   global data_source
@@ -56,6 +56,7 @@ def signal_handler(sig, frame):
       # check whether the process name matches
       if proc.name() == PROCNAME:
           proc.kill()
+
 
   sys.exit(0)
 
@@ -91,7 +92,18 @@ def main():
     threads.append(thread)
     thread.start()
     print("Created thread #" + str(n+1))
-  
+
+  while(True):
+    time.sleep(1)
+    dead_thread = False
+    for n in range(num_threads):
+      if not threads[n].isAlive():
+        dead_thread = True
+        print("Thread {} is dead\n{}".format(n, threads[n]))
+
+    if dead_thread:
+      exit(666)
+
 
 def save_every_x_minutes(minutes):
   global data_source
