@@ -29,6 +29,8 @@ class WebScraper():
       self.driver.quit()
       self.driver = None
 
+    sys.exit(0)
+
     print("Thread successfully exit.")
 
   def __init__(self, data_source, logger, ID=0):
