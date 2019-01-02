@@ -118,6 +118,7 @@ class WebScraper():
 
     except Exception as e:
       self.logger.log("[Scraper #{0}] An error has occured while closing the driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
+      sys.exit(666)
 
   def recreateDrivers(self):
     self.logger.log("[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.NORMAL)
