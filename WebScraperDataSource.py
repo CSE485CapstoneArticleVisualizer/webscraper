@@ -175,16 +175,19 @@ class WebScraperDataSource():
         
 
     # Save to_be_visited_pages
-    target = './to_be_visited_pages.txt'
-    with open(target, 'a') as outfile:
-      #json.dump(list(to_be_visited_pages), outfile, sort_keys=True, indent=4, separators=(',', ': '))
-      for page in self.to_be_visited_pages:
-        outfile.write("%s\n" % page.rstrip())
-          
-    # Retain X pages
-    self.to_be_visited_pages = DATA_SOURCE_RETRIEVE_PAGE_COUNT_set
-    self.log("After write to disk: " + str(len(self.to_be_visited_pages)))
-
+    try:
+      target = './to_be_visited_pages.txt'
+      with open(target, 'a') as outfile:
+        #json.dump(list(to_be_visited_pages), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+        for page in self.to_be_visited_pages:
+          outfile.write("%s\n" % page.rstrip())
+            
+      # Retain X pages
+      self.to_be_visited_pages = DATA_SOURCE_RETRIEVE_PAGE_COUNT_set
+      self.log("After write to disk: " + str(len(self.to_be_visited_pages)))
+    except Exception as e:
+      self.log("EXCEPTION HAS OCCURED WHILE OPENING FILE ./to_be_visited_pages.txt\n{}".format(e))
+      
     self.lock_to_be_visited_pages.release()
 
   def retrieveToBeVisitedFromDisk(self, X=100):
@@ -192,42 +195,45 @@ class WebScraperDataSource():
     self.lock_to_be_visited_pages.acquire()
     self.log("Size before read from disk: " + str(len(self.to_be_visited_pages)))
 
-    # Retreive the last X lines
-    lastX = set()
-    with open('./to_be_visited_pages.txt') as fin:
-      temp = deque(fin, X)
-      lastX = set(temp)
-      self.log("Retrieved " + str(len(temp)) + " lines")
-      self.to_be_visited_pages = self.to_be_visited_pages.union(lastX)
+    try:
+      # Retreive the last X lines
+      lastX = set()
+      with open('./to_be_visited_pages.txt') as fin:
+        temp = deque(fin, X)
+        lastX = set(temp)
+        self.log("Retrieved " + str(len(temp)) + " lines")
+        self.to_be_visited_pages = self.to_be_visited_pages.union(lastX)
 
-    # Delete the last X lines
-    file = open('./to_be_visited_pages.txt', "r+", encoding = "utf-8")
+      # Delete the last X lines
+      file = open('./to_be_visited_pages.txt', "r+", encoding = "utf-8")
 
-    for _ in range(X):
-      # Move the pointer (similar to a cursor in a text editor) to the end of the file. 
-      file.seek(0, os.SEEK_END)
+      for _ in range(X):
+        # Move the pointer (similar to a cursor in a text editor) to the end of the file. 
+        file.seek(0, os.SEEK_END)
 
-      # This code means the following code skips the very last character in the file - 
-      # i.e. in the case the last line is null we delete the last line 
-      # and the penultimate one
-      pos = file.tell() - 1
+        # This code means the following code skips the very last character in the file - 
+        # i.e. in the case the last line is null we delete the last line 
+        # and the penultimate one
+        pos = file.tell() - 1
 
-      # Read each character in the file one at a time from the penultimate 
-      # character going backwards, searching for a newline character
-      # If we find a new line, exit the search
-      while pos > 0 and file.read(1) != "\n":
-        pos -= 1
-        file.seek(pos, os.SEEK_SET)
+        # Read each character in the file one at a time from the penultimate 
+        # character going backwards, searching for a newline character
+        # If we find a new line, exit the search
+        while pos > 0 and file.read(1) != "\n":
+          pos -= 1
+          file.seek(pos, os.SEEK_SET)
 
-      # So long as we're not at the start of the file, delete all the characters ahead of this position
-      if pos >= 0:
-        file.seek(pos, os.SEEK_SET)
-        file.truncate()
-      else:
-        break
+        # So long as we're not at the start of the file, delete all the characters ahead of this position
+        if pos >= 0:
+          file.seek(pos, os.SEEK_SET)
+          file.truncate()
+        else:
+          break
 
-    file.close()
-    self.log("Size after read from disk: " + str(len(self.to_be_visited_pages)) + "\n\n")
+      file.close()
+      self.log("Size after read from disk: " + str(len(self.to_be_visited_pages)) + "\n\n")
+    except Exception as e:
+      self.log("EXCEPTION HAS OCCURED WHILE OPENING FILE ./to_be_visited_pages.txt\n{}".format(e))
 
     self.lock_to_be_visited_pages.release()
 
