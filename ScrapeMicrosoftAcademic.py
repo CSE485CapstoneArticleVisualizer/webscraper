@@ -87,7 +87,7 @@ def main():
   import random
   
   for n in range(num_threads):
-    time.sleep(1/num_threads + random.uniform(0, 1))
+    time.sleep(1 + random.uniform(0, 1) + 1/num_threads + random.uniform(0, 1)/num_threads/2)
     thread = Thread(target = create_scraper, args = (n+1, ))
     threads.append(thread)
 
