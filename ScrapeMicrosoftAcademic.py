@@ -64,8 +64,6 @@ def signal_handler(sig, frame):
 
 
 def main():
-
-  
   
   global data_source
   data_source = WebScraperDataSource()
@@ -86,10 +84,13 @@ def main():
 
   global threads
   threads = []
+  import random
+  
   for n in range(num_threads):
-    time.sleep(1)
+    time.sleep(1/num_threads + random.uniform(0, 1))
     thread = Thread(target = create_scraper, args = (n+1, ))
     threads.append(thread)
+
     thread.start()
     print("Created thread #" + str(n+1))
 
