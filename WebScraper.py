@@ -352,7 +352,7 @@ class WebScraper():
         max_attempts = 2
         while attempt_count != -1 and attempt_count <= max_attempts and not Globals.end_threads:
           try:
-            sleep(1)
+            time.sleep(1)
             elem = WebDriverWait(self.driver, 3).until(
               EC.presence_of_element_located((By.CSS_SELECTOR, 'div.pure-u-md-4-24:nth-child(1) > a:nth-child(2)'))
               #EC.presence_of_element_located((By.CSS_SELECTOR, 'ma-ulist.ulist-paper:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > a:nth-child(1)'))
