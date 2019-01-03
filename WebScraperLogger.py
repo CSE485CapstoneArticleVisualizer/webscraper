@@ -1,6 +1,8 @@
 import settings
 import os 
 from enum import Enum
+import datetime
+
 class Priority(Enum):
   DEBUG = 1
   LOW = 2
@@ -29,18 +31,25 @@ class WebScraperLogger():
     print("CRITICAL_ENABLED: {0}".format(self.CRITICAL_ENABLED))
     print("ARTICLE_DETAILS_ENABLED: {0}".format(self.ARTICLE_DETAILS_ENABLED))
     print("------------------------------------------------------------------")
-  def log(self, X, priority=Priority.NORMAL):
+  def log(self, filename, message, priority=Priority.NORMAL):
+    # Save to_be_visited_pages
+    
+    if priority.value > Priority.LOW.value:
+      target = './{}'.format(filename)
+      with open(target, 'a') as outfile:
+        outfile.write("%s %s\n" % (datetime.datetime.now().strftime("[%I:%M%p on %B %d, %Y]"), message))
+        
     if self.logging_enabled:
       if self.DEBUG_ENABLED and priority.value == Priority.DEBUG.value:
-        print(X)
+        print(message)
       elif self.LOW_ENABLED and priority.value == Priority.LOW.value:
-        print(X)
+        print(message)
       elif self.NORMAL_ENABLED and priority.value == Priority.NORMAL.value:
-        print(X)
+        print(message)
       elif self.HIGH_ENABLED and priority.value == Priority.HIGH.value:
-        print(X)
+        print(message)
       elif self.CRITICAL_ENABLED and priority.value == Priority.CRITICAL.value:
-        print(X)
+        print(message)
       elif self.ARTICLE_DETAILS_ENABLED and priority.value == Priority.ARTICLE_DETAILS.value:
-        print(X)
+        print(message)
       

@@ -123,7 +123,9 @@ class WebScraperDataSource():
 
     if len(self.to_be_visited_pages) >= self.DATA_SOURCE_MAX_PAGE_COUNT_IN_MEM:
       self.saveToBeVisitedToDisk(self.DATA_SOURCE_RETRIEVE_PAGE_COUNT)
-    self.log("\n[DATA SOURCE] Saved future page " + str(len(self.to_be_visited_pages)) + "\n")
+    
+    if len(self.to_be_visited_pages) % 10 == 0:
+      self.log("[DATA SOURCE] Saved future page " + str(len(self.to_be_visited_pages)))
     self.lock_to_be_visited_pages.release()
 
   def saveVisitedPage(self, page):
