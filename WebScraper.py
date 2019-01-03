@@ -411,7 +411,7 @@ class WebScraper():
       # Add this article to the web_scraped_articles set
       self.data_source.saveScrapedArticle(title_str)
 
-      self.logger.log("thread{}.txt".format(self.ID), "\n\n----------------------------------------------------------------------\n\n", priority=Priority.NORMAL)
+      self.logger.log("thread{}.txt".format(self.ID), "----------------------------------------------------------------------", priority=Priority.NORMAL)
 
   def getCitationCount(self, citation_string):
     
