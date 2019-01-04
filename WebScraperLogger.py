@@ -33,8 +33,8 @@ class WebScraperLogger():
     print("------------------------------------------------------------------")
   def log(self, filename, message, priority=Priority.NORMAL):
     # Save to_be_visited_pages
-    
-    if priority.value > Priority.LOW.value and priority.value != Priority.ARTICLE_DETAILS.value:
+    save_to_file = False
+    if save_to_file and priority.value > Priority.NORMAL.value and priority.value != Priority.ARTICLE_DETAILS.value:
       target = './{}'.format(filename)
       with open(target, 'a') as outfile:
         outfile.write("%s %s\n" % (datetime.datetime.now().strftime("[%I:%M%p on %B %d, %Y]"), message))
