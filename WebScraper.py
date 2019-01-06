@@ -121,22 +121,27 @@ class WebScraper():
       sys.exit(666)
 
   def recreateDrivers(self):
-    self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.NORMAL)
-    if self.driver is not None:
-      self.driver.close()
-      self.driver.quit()
-      self.driver = None
+    success = False
+    while not success:
+      self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.NORMAL)
+      
+      try:
+        self.driver.close()
+        self.driver.quit()
+        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Closed and quit primary driver...".format(self.ID), priority=Priority.NORMAL)
 
-    time.sleep(0.5)
-    # In the case that the web drivers closed on themselves, recreate them
-    #if self.driver is None:
-    try:
-      self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Creating primary driver...".format(self.ID), priority=Priority.NORMAL)
-      self.driver = webdriver.Firefox(firefox_options=self.options)
-    except Exception as e:
-      self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] An error has occured while reopening the primary driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
-      self.recreateDrivers()
+        time.sleep(2.0)
 
+        # In the case that the web drivers closed on themselves, recreate them
+        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Recreating primary driver...".format(self.ID), priority=Priority.NORMAL)
+        self.driver = webdriver.Firefox(firefox_options=self.options)
+        time.sleep(2.0)
+        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Successfully recreated primary driver...".format(self.ID), priority=Priority.NORMAL)
+
+        success = True
+      except Exception as e:
+        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] An error has occured while reopening the primary driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
+        continue
   '''
   Simply retrieves the titles of the papers that cite the designated paper
   '''
