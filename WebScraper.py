@@ -17,7 +17,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-import httplib
+import http.client
 import socket
 from selenium.webdriver.remote.command import Command
 
@@ -29,7 +29,7 @@ class WebScraper():
     try:
         driver.execute(Command.STATUS)
         return "Alive"
-    except (socket.error, httplib.CannotSendRequest):
+    except (socket.error, http.client.CannotSendRequest):
         return "Dead"
 
   def exit_handler(self):
