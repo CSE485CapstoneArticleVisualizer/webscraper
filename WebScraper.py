@@ -17,9 +17,20 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import httplib
+import socket
+from selenium.webdriver.remote.command import Command
+
 class WebScraper():
   citation_count_pattern = r"[^\d]*(\d+,?\d*)[^\d]*"
   citation_count_regex = re.compile(citation_count_pattern)
+
+  def get_driver_status(self, driver):
+    try:
+        driver.execute(Command.STATUS)
+        return "Alive"
+    except (socket.error, httplib.CannotSendRequest):
+        return "Dead"
 
   def exit_handler(self):
     print('Thread #{0} closing...'.format(self.ID))
@@ -125,13 +136,20 @@ class WebScraper():
     while not success:
       self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Recreating web drivers from scratch...".format(self.ID), priority=Priority.NORMAL)
       
+
       try:
-        self.driver.close()
-        self.driver.quit()
-        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Closed and quit primary driver...".format(self.ID), priority=Priority.NORMAL)
 
-        time.sleep(2.0)
+        if self.get_driver_status(self.driver) == 'Alive':
+          self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Attempting to close and quit primary driver...".format(self.ID), priority=Priority.NORMAL)
+          self.driver.close()
+          self.driver.quit()
+          time.sleep(2.0)
+          self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Closed and quit primary driver...".format(self.ID), priority=Priority.NORMAL)
 
+      except Exception as e:
+        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] An error has occured while closing the old primary driver:\n{1}".format(self.ID, e), priority=Priority.CRITICAL)
+      
+      try:
         # In the case that the web drivers closed on themselves, recreate them
         self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Recreating primary driver...".format(self.ID), priority=Priority.NORMAL)
         self.driver = webdriver.Firefox(firefox_options=self.options)
@@ -140,8 +158,8 @@ class WebScraper():
 
         success = True
       except Exception as e:
-        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] An error has occured while reopening the primary driver:\n{1}".format(self.ID, str(e)), priority=Priority.CRITICAL)
-        continue
+        self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] An error has occured while opening the primary driver:\n{1}".format(self.ID, e), priority=Priority.CRITICAL)
+
   '''
   Simply retrieves the titles of the papers that cite the designated paper
   '''
