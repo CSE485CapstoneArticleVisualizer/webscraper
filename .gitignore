@@ -12,5 +12,6 @@ web_scraped_articles.json
 to_be_visited_pages.txt
 geckodriver.log
 thread*.txt
+old_thread_logs
 *.pyc
 ignore_me
