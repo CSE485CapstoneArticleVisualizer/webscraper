@@ -143,7 +143,7 @@ class WebScraper():
           self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Attempting to close and quit primary driver...".format(self.ID), priority=Priority.NORMAL)
           self.driver.close()
           self.driver.quit()
-          time.sleep(2.0)
+          time.sleep(0.5)
           self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Closed and quit primary driver...".format(self.ID), priority=Priority.NORMAL)
 
       except Exception as e:
@@ -153,7 +153,7 @@ class WebScraper():
         # In the case that the web drivers closed on themselves, recreate them
         self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Recreating primary driver...".format(self.ID), priority=Priority.NORMAL)
         self.driver = webdriver.Firefox(firefox_options=self.options)
-        time.sleep(2.0)
+        time.sleep(0.5)
         self.logger.log("thread{}.txt".format(self.ID), "[Scraper #{0}] Successfully recreated primary driver...".format(self.ID), priority=Priority.NORMAL)
 
         success = True
@@ -251,7 +251,7 @@ class WebScraper():
     max_attempts = 2
     while attempt_count != -1 and attempt_count <= max_attempts and not Globals.end_threads:
       try:
-        _ = WebDriverWait(web_driver, 10).until(
+        _ = WebDriverWait(web_driver, 5).until(
             #EC.presence_of_element_located((By.CSS_SELECTOR, '.content-main section.paper-tile'))
             EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats:nth-child(2)'))
             #EC.presence_of_element_located((By.CSS_SELECTOR, 'div.result-stats'))
@@ -376,12 +376,12 @@ class WebScraper():
         while attempt_count != -1 and attempt_count <= max_attempts and not Globals.end_threads:
           try:
             time.sleep(0.5)
-            elem = WebDriverWait(self.driver, 10).until(
+            elem = WebDriverWait(self.driver, 5).until(
               EC.presence_of_element_located((By.CSS_SELECTOR, 'div.pure-u-md-4-24:nth-child(1) > a:nth-child(2)'))
               #EC.presence_of_element_located((By.CSS_SELECTOR, 'ma-ulist.ulist-paper:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > a:nth-child(1)'))
               
             )
-            reference_count_elem = WebDriverWait(self.driver, 10).until(
+            reference_count_elem = WebDriverWait(self.driver, 5).until(
               EC.presence_of_element_located((By.CSS_SELECTOR, 'div.pure-u-md-4-24:nth-child(1) > h1:nth-child(1)'))
               #EC.presence_of_element_located((By.CSS_SELECTOR, 'ma-ulist.ulist-paper:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > a:nth-child(1)'))
             )
