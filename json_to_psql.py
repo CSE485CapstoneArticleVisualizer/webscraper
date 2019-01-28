@@ -6,7 +6,9 @@ import psycopg2
 connection = psycopg2.connect("host=localhost dbname=stephen user=stephen password=stephen")
 cursor = connection.cursor()
 
-with open('./Data/2019-01-28/2017-09-01--YouTube as a Source of Information on Neurosurgery.json') as json_data:
+with open('./Data/2019-01-28/2019-03-01--Demystifying the impact of CEO transformational leadership on firm performance Interactive roles of exploratory innovation and environmental uncertainty.json') as json_data:
+#with open('./Data/2019-01-28/2017-09-01--YouTube as a Source of Information on Neurosurgery.json') as json_data:    
+    
     data = json.load(json_data)
     print(data)
     # Populate column fields
@@ -26,4 +28,4 @@ with open('./Data/2019-01-28/2017-09-01--YouTube as a Source of Information on N
         if isinstance(v, dict):
             my_data[i] = json.dumps(v)
 
-    cursor.execute("INSERT INTO articles VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)", tuple(my_data))
+    cursor.execute("INSERT INTO articles (info) VALUES (%s)", str(data))
