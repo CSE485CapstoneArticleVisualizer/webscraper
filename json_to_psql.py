@@ -14,15 +14,15 @@ with open('./Data/2019-01-28/2019-03-01--Demystifying the impact of CEO transfor
     
 
     # create a table with one column of type JSON
-    cur.execute("CREATE TABLE SMA2 (data json);")
+    cur.execute("CREATE TABLE SMA3 (data json);")
 
-    #fields = ['abstract', 'authors', 'citationCount', 'citedBy', 'citedByCount', 'cites', 'citesCount', 'date', 'journal', 'referenceCount', 'title'];
-    fields = ['title'];
+    fields = ['abstract', 'authors', 'citationCount', 'citedBy', 'citedByCount', 'cites', 'citesCount', 'date', 'journal', 'referenceCount', 'title'];
+    #fields = ['title'];
 
     for item in data:
         my_data = {field: item[field] for field in fields}
         print("FINAL DATA\n", my_data)
-        cur.execute("INSERT INTO SMA2 VALUES (%s)", (json.dumps(my_data),))
+        cur.execute("INSERT INTO SMA3 VALUES (%s)", (json.dumps(my_data),))
 
 
     # commit changes
