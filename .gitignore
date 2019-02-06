@@ -1,6 +1,8 @@
+.vscode
 .vscode/*
 ./geckodriver.log
 ./debug.log
+env
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
