@@ -3,32 +3,51 @@
 import json
 import psycopg2
 
-conn = psycopg2.connect("host=localhost dbname=stephen user=stephen password=stephen")
-cur = conn.cursor()
+# Saves journal in the database if it doens't exist
+# Returns journal id
+def save_journal(journal_name):
+    cur.execute("select id from journals as j where j.name = %s;", (journal_name, ))
+    journal = cur.fetchone()
 
-with open('./Data/2019-01-28/2019-03-01--Demystifying the impact of CEO transformational leadership on firm performance Interactive roles of exploratory innovation and environmental uncertainty.json') as json_data:
-#with open('./Data/2019-01-28/2017-09-01--YouTube as a Source of Information on Neurosurgery.json') as json_data:    
+    # Create journal if it doesn't exist
+    if journal is None:
+        cur.execute("INSERT INTO journals (name) VALUES (%s)", (journal_name,))
+        conn.commit()
+        print("Saved journal {}".format(journal_name))
+
+        cur.execute("select id from journals as j where j.name = %s;", (journal_name, ))
+        journal_id = cur.fetchone()[0]
+    else:
+        # Journal exists. Retrive journal id
+        journal_id = journal[0]
+
+    return journal_id
     
-    # data here is a list of dicts
-    data = [json.load(json_data)]
-    
 
-    # create a table with one column of type JSON
-    cur.execute("CREATE TABLE SMA (data json);")
+# Saves each author in the authors list 
+def save_authors(authors, article_id):
+    for author_name in authors:
+        cur.execute("INSERT INTO article_authors (article_id, author_name) VALUES (%s, %s)", (article_id, author_name))
+        conn.commit()
 
-    fields = ['abstract', 'authors', 'citationCount', 'citedBy', 'citedByCount', 'cites', 'citesCount', 'date', 'journal', 'referenceCount', 'title'];
-    #fields = ['title'];
+# Saves each citation in the cited_by list 
+def save_cited_by(cited_by, article_id):
+    pass
 
-    for item in data:
-        my_data = {field: item[field] for field in fields}
-        print("FINAL DATA\n", my_data)
-        cur.execute("INSERT INTO SMA VALUES (%s)", (json.dumps(my_data),))
+# Saves each citation in the cites list 
+def save_cites(cites, article_id):
+    pass
+
+# Saves an article
+def save_article(json_obj):
+    pass
 
 
-    # commit changes
-    conn.commit()
-    # Close the connection
+if __name__ == "__main__":
+    conn = psycopg2.connect("host=localhost dbname=alex")
+    cur = conn.cursor()
+
+    # print(save_journal('Space Journal 3'))
+    save_authors(['Space Author 1', 'Space Author 2', 'Space Author 3'], 0)
+    conn.commit(), 
     conn.close()
-    print("Success!")
-
-    # -------------------------------------
