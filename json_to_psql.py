@@ -170,7 +170,7 @@ def get_folders(path):
     return folders
 
 if __name__ == "__main__":
-    conn = psycopg2.connect("host=localhost dbname=alex")
+    conn = psycopg2.connect("host=localhost port=5434 dbname=stephen user=stephen password=stephen")
     cur = conn.cursor()
     # delete_all_rows()
 
