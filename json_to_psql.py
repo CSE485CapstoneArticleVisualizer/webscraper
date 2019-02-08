@@ -3,6 +3,7 @@
 import json
 import psycopg2
 import datetime
+import os
 
 def delete_all_rows():
     cur.execute("DELETE FROM cites;")
@@ -146,8 +147,30 @@ def get_data_files():
     import glob
     return glob.glob("./Data/*/*")
 
+def move_data_file(date_folder, filename):
+    if not os.path.exists("./Data_Archived/"+date_folder):
+        os.makedirs("./Data_Archived/"+date_folder)
+
+    os.rename("./Data/{}/{}".format(date_folder, filename), "./Data_Archived/{}/{}".format(date_folder,filename))
+
+def get_folders(path):
+    folders = []
+    while 1:
+        path, folder = os.path.split(path)
+
+        if folder != "":
+            folders.append(folder)
+        else:
+            if path != "":
+                folders.append(path)
+
+            break
+
+    folders.reverse()
+    return folders
+
 if __name__ == "__main__":
-    conn = psycopg2.connect("host=localhost dbname=stephen user=stephen password=stephen")
+    conn = psycopg2.connect("host=localhost dbname=alex")
     cur = conn.cursor()
     # delete_all_rows()
 
@@ -166,6 +189,9 @@ if __name__ == "__main__":
         print("Time it took: ", elapsedTime.total_seconds())
         average_time = average_time * 0.99 + elapsedTime.total_seconds() * (1-0.99) 
         print("Running average time: ", average_time)
+        folders = get_folders(file)
+
+        move_data_file(folders[2], folders[3])
 
     finish_time = datetime.datetime.now()
     elapsedTime = finish_time - start_time
@@ -175,3 +201,5 @@ if __name__ == "__main__":
 
     conn.commit() 
     conn.close()
+
+

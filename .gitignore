@@ -7,6 +7,7 @@ env
 !.vscode/launch.json
 !.vscode/extensions.json
 Data
+Data_Archived
 to_be_visited_pages.json
 visited_pages.json
 web_scraped_articles.json
@@ -15,3 +16,4 @@ geckodriver.log
 thread*.txt
 old_thread_logs
 *.pyc
+Data_tmp
