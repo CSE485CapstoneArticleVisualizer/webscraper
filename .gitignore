@@ -1,4 +1,3 @@
-.vscode
 .vscode/*
 ./geckodriver.log
 ./debug.log
@@ -16,4 +15,3 @@ geckodriver.log
 thread*.txt
 old_thread_logs
 *.pyc
-ignore_me
