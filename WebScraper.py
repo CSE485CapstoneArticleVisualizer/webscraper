@@ -314,17 +314,20 @@ class WebScraper():
         continue
 
       # Author/Journal/Year
-      authors_list = paper.select(".paper-authors")
+      authors_list = paper.select(".paper-authors .ulist-content")
       authors = []
       associations = []
-      for author in authors_list:
-        #author_list, journal = getAuthorsAndJournal(authors)
-        x = author.select("a.button-link")
-        if len(x) > 0:
-          authors.append(recursiveGetString(x[0]))
-        if len(x) > 1:
-          associations.append(recursiveGetString(x[1]))
 
+      for index, author in enumerate(authors_list[0]):
+
+        if index != 0 and index != len(authors_list[0])-1:
+          #print("Author: ", author);
+          x = author.select("a.button-link")
+          if len(x) > 0:
+            authors.append(recursiveGetString(x[0]))
+          if len(x) > 1:
+            associations.append(recursiveGetString(x[1]))
+      
       self.logger.log("thread{}.txt".format(self.ID), "Authors: " + " ".join(authors), priority=Priority.ARTICLE_DETAILS)
       self.logger.log("thread{}.txt".format(self.ID), "Associations: " + " ".join(associations), priority=Priority.ARTICLE_DETAILS)
 

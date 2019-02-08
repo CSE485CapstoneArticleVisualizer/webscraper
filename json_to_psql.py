@@ -147,7 +147,7 @@ def get_data_files():
     return glob.glob("./Data/*/*")
 
 if __name__ == "__main__":
-    conn = psycopg2.connect("host=localhost dbname=alex")
+    conn = psycopg2.connect("host=localhost dbname=stephen user=stephen password=stephen")
     cur = conn.cursor()
     # delete_all_rows()
 
