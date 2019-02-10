@@ -2,6 +2,7 @@
 # Open the JSON file
 import json
 import psycopg2
+import psycopg2.extras
 import datetime
 import os
 
@@ -38,20 +39,20 @@ def save_journal(journal_name):
 
 # Saves each author in the authors list 
 def save_authors(authors, article_id):
-    for author_name in authors:
-        cur.execute("INSERT INTO article_authors (article_id, author_name) VALUES (%s, %s)", (article_id, author_name))
+    data = [(article_id, author_name) for author_name in authors]
+    psycopg2.extras.execute_values(cur, "INSERT INTO article_authors (article_id, author_name) VALUES %s", data, template=None, page_size=100)
     conn.commit()
 
 # Saves each citation in the cited_by list 
 def save_cited_by(cited_by, article_id):
-    for cited_by_id in cited_by:
-        cur.execute("INSERT INTO cited_by (article_id, cited_by_id) VALUES (%s, %s)", (article_id, cited_by_id))
+    data = [(article_id, cited_by_id) for cited_by_id in cited_by]
+    psycopg2.extras.execute_values(cur, "INSERT INTO cited_by (article_id, cited_by_id) VALUES %s", data, template=None, page_size=100)
     conn.commit()
 
 # Saves each citation in the cites list 
 def save_cites(cites, article_id):
-    for cites_article_id in cites:
-        cur.execute("INSERT INTO cites (article_id, cites_article_id) VALUES (%s, %s)", (article_id, cites_article_id))
+    data = [(article_id, cites_article_id) for cites_article_id in cites]
+    psycopg2.extras.execute_values(cur, "INSERT INTO cites (article_id, cites_article_id) VALUES %s", data, template=None, page_size=100)
     conn.commit()
 
 # Converts a list of article titles to article ids
@@ -170,7 +171,9 @@ def get_folders(path):
     return folders
 
 if __name__ == "__main__":
+    #conn = psycopg2.connect("host=localhost dbname=alex")
     conn = psycopg2.connect("host=localhost port=5434 dbname=stephen user=stephen password=stephen")
+
     cur = conn.cursor()
     # delete_all_rows()
 
