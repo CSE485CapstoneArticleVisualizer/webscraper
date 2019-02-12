@@ -3,7 +3,9 @@
 import psycopg2
 
 def getArticlesThatMatchString(string) :
-    cur.execute("SELECT S.* FROM sma S WHERE S.title = %s", (string, ))
+    cur.execute("""SELECT S.* 
+                 FROM sma S 
+                 WHERE S.title = %s""", (string, ))
     print(cur.fetchall())
 
 if __name__ == "__main__":

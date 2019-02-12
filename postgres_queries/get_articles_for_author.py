@@ -3,7 +3,10 @@
 import psycopg2
 
 def getArticlesForAuthor(author) :
-    cur.execute("SELECT S.* FROM sma S, article_authors A WHERE S.id = A.article_id AND A.author_name = %s", (author, ))
+    cur.execute("""SELECT S.* 
+                   FROM sma S, article_authors A 
+                   WHERE S.id = A.article_id 
+                   AND A.author_name = %s""", (author, ))
     print(cur.fetchall())
 
 if __name__ == "__main__":
