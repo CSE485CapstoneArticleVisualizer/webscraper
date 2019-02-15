@@ -1,3 +1,7 @@
+###
+# This was taken from https://stackoverflow.com/questions/47747766/create-insert-json-in-postgres-with-requests-and-psycopg2
+###
+
 import requests
 import psycopg2
 import json

@@ -19,12 +19,13 @@ import psycopg2
 
 def getCSVJournals():
     journalArray = []
-    with open('categories.csv') as csv_file:
+    with open('categories.csv', encoding='utf8') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter='|')
 
         for row in csv_reader:
             if len(row) == 4:
                 journalArray.append(row[3])
+            print(row)
     return journalArray
 
 
