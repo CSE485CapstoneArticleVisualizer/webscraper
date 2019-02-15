@@ -38,13 +38,14 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     databaseJournals = getDatabaseJournals()
+    print(databaseJournals[0])
     csvJournals = getCSVJournals()
 
-    databaseJournals = [journal.lower() for journal in databaseJournals]
-    csvJournals = [journal.lower() for journal in csvJournals]
+    databaseJournals = set([journal.lower() for journal in databaseJournals])
+    csvJournals = set([journal.lower() for journal in csvJournals])
 
-    inDatabaseNotCSV = list(set(databaseJournals) - set(csvJournals))
-    inCSVnotDatabase = list(set(csvJournals) - set(databaseJournals))
+    inDatabaseNotCSV = databaseJournals - csvJournals
+    inCSVnotDatabase = csvJournals - databaseJournals
     
     print("Database: " + str(len(databaseJournals)))
     print("CSV: " + str(len(csvJournals)))
