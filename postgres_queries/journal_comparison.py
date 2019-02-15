@@ -25,14 +25,13 @@ def getCSVJournals():
         for row in csv_reader:
             if len(row) == 4:
                 journalArray.append(row[3])
-            print(row)
     return journalArray
 
 
 def getDatabaseJournals():
     cur.execute("""SELECT J.name 
                     FROM journals J""", ())
-    return cur.fetchall()
+    return [row[0] for row in cur.fetchall()]
 
 if __name__ == "__main__":
     conn = psycopg2.connect("host=localhost port=5434 dbname=stephen user=stephen password=stephen")
@@ -41,5 +40,13 @@ if __name__ == "__main__":
     databaseJournals = getDatabaseJournals()
     csvJournals = getCSVJournals()
 
-    print(databaseJournals)
-    print(csvJournals)
+    databaseJournals = [journal.lower() for journal in databaseJournals]
+    csvJournals = [journal.lower() for journal in csvJournals]
+
+    inDatabaseNotCSV = list(set(databaseJournals) - set(csvJournals))
+    inCSVnotDatabase = list(set(csvJournals) - set(databaseJournals))
+    
+    print("Database: " + str(len(databaseJournals)))
+    print("CSV: " + str(len(csvJournals)))
+    print("Database Not CSV: " + str(len(inDatabaseNotCSV)))
+    print("CSV Not Database: " + str(len(inCSVnotDatabase)))
