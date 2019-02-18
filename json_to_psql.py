@@ -84,19 +84,23 @@ def save_article(json_article):
     # Create article if it doesn't exist
     if article is None:
         journal_id = save_journal(json_article['journal'])
-        cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
-                    (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
-        
-        article = cur.fetchone()
-        article_id = article[0]
-        conn.commit()
+        try:
+            cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
+                        (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
+            
+            article = cur.fetchone()
+            article_id = article[0]
+            conn.commit()
 
-        # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
-        # Solution: Not groupBy. Used Primary Key on both columns.
-        save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
-        save_authors(json_article['authors'], article_id)
-        save_cites(convert_articles_to_ids(json_article['cites']), article_id)
-        print("Created new article: ", article_id)
+            # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
+            # Solution: Not groupBy. Used Primary Key on both columns.
+            save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
+            save_authors(json_article['authors'], article_id)
+            save_cites(convert_articles_to_ids(json_article['cites']), article_id)
+            print("Created new article: ", article_id)
+        except Exception as e:
+            print('Error occurred while creating new article:', e)
+            return -1;
 
     else:
 
@@ -140,9 +144,9 @@ def save_article_file(filename):
 
 
         print("Loaded json:", json_article['title'])
-        save_article(json_article)
-    
-    print("Saved file")
+        article_id = save_article(json_article)
+        print("Saved file")
+        return article_id
         
 def get_data_files():
     import glob
@@ -185,7 +189,7 @@ if __name__ == "__main__":
     for file in get_data_files():
         time1 = datetime.datetime.now()
 
-        save_article_file(file)
+        article_id = save_article_file(file)
     
         time2 = datetime.datetime.now() # waited a few minutes before pressing enter
         elapsedTime = time2 - time1
@@ -194,7 +198,9 @@ if __name__ == "__main__":
         print("Running average time: ", average_time)
         folders = get_folders(file)
 
-        move_data_file(folders[2], folders[3])
+        if article_id != -1:
+            move_data_file(folders[2], folders[3])
+
 
     finish_time = datetime.datetime.now()
     elapsedTime = finish_time - start_time
