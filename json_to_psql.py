@@ -78,59 +78,60 @@ def convert_articles_to_ids(article_titles):
 
 # Saves an article
 def save_article(json_article):
-    cur.execute("SELECT id, journal_id FROM sma AS sma where sma.title = %s;", (json_article['title'], ))
-    article = cur.fetchone()
-    
-    # Create article if it doesn't exist
-    if article is None:
-        journal_id = save_journal(json_article['journal'])
-        try:
-            cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
-                        (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
-            
-            article = cur.fetchone()
-            article_id = article[0]
-            conn.commit()
-
-            # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
-            # Solution: Not groupBy. Used Primary Key on both columns.
-            save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
-            save_authors(json_article['authors'], article_id)
-            save_cites(convert_articles_to_ids(json_article['cites']), article_id)
-            print("Created new article: ", article_id)
-        except Exception as e:
-            print('Error occurred while creating new article:', e)
-            return -1;
-
-    else:
-
-        # Run update if necessary (expected cited by, expected cites, abstract, publish date, date added, etc.)
-        # It becomes 'necessary' if the journal field is missing
-        article_id = article[0]
-        journal_id = article[1]
-        if journal_id is None: # Run the update
+    try:
+        cur.execute("SELECT id, journal_id FROM sma AS sma where sma.title = %s;", (json_article['title'], ))
+        article = cur.fetchone()
+        
+        # Create article if it doesn't exist
+        if article is None:
             journal_id = save_journal(json_article['journal'])
-            cur.execute("UPDATE sma SET expected_cited_by_count=%s, expected_cites_count=%s, abstract=%s, publish_date=%s, date_added=%s, journal_id=%s WHERE id = %s;", 
-                        (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), journal_id, article_id))
-            conn.commit()
+                cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
+                            (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
+                
+                article = cur.fetchone()
+                article_id = article[0]
+                conn.commit()
 
-            # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
-            # Solution: Not groupBy. Used Primary Key on both columns.
-            save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
-            save_authors(json_article['authors'], article_id)
-            save_cites(convert_articles_to_ids(json_article['cites']), article_id)
-            print("Updated article: ", article_id)
+                # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
+                # Solution: Not groupBy. Used Primary Key on both columns.
+                save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
+                save_authors(json_article['authors'], article_id)
+                save_cites(convert_articles_to_ids(json_article['cites']), article_id)
+                print("Created new article: ", article_id)
 
-    # ------------------------------------------------------------------------------
-    # journal_id = save_journal(json_article['journal'])
-    # cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT (id) DO UPDATE SET expected_cited_by_count = 666 RETURNING id;", 
-    #         (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
-    
-    # article = cur.fetchone()
-    # article_id = article[0]
-    # ------------------------------------------------------------------------------
 
-    return article_id
+        else:
+
+            # Run update if necessary (expected cited by, expected cites, abstract, publish date, date added, etc.)
+            # It becomes 'necessary' if the journal field is missing
+            article_id = article[0]
+            journal_id = article[1]
+            if journal_id is None: # Run the update
+                journal_id = save_journal(json_article['journal'])
+                cur.execute("UPDATE sma SET expected_cited_by_count=%s, expected_cites_count=%s, abstract=%s, publish_date=%s, date_added=%s, journal_id=%s WHERE id = %s;", 
+                            (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), journal_id, article_id))
+                conn.commit()
+
+                # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
+                # Solution: Not groupBy. Used Primary Key on both columns.
+                save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
+                save_authors(json_article['authors'], article_id)
+                save_cites(convert_articles_to_ids(json_article['cites']), article_id)
+                print("Updated article: ", article_id)
+
+            # ------------------------------------------------------------------------------
+            # journal_id = save_journal(json_article['journal'])
+            # cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT (id) DO UPDATE SET expected_cited_by_count = 666 RETURNING id;", 
+            #         (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
+            
+            # article = cur.fetchone()
+            # article_id = article[0]
+        return article_id
+
+    except Exception as e:
+        print('Error occurred while creating new article:', e)
+        return -1;
+
     
 def save_article_file(filename):
     with open(filename) as data:
