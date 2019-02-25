@@ -150,6 +150,8 @@ def save_article(json_article):
         return article_id
 
     except Exception as e:
+        cur.execute("rollback")
+        conn.commit()
         print('Error occurred while creating new article:', e)
         return -1
 
@@ -205,7 +207,7 @@ def get_folders(path):
 if __name__ == "__main__":
     #conn = psycopg2.connect("host=localhost dbname=alex")
     conn = psycopg2.connect(
-        "host=localhost port=5434 dbname=stephen user=stephen password=stephen")
+        "host=localhost dbname=stephen user=stephen password=stephen")
 
     cur = conn.cursor()
     # delete_all_rows()
