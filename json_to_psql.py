@@ -6,6 +6,7 @@ import psycopg2.extras
 import datetime
 import os
 
+
 def delete_all_rows():
     cur.execute("DELETE FROM cites;")
     cur.execute("DELETE FROM cited_by;")
@@ -18,13 +19,17 @@ def delete_all_rows():
 
 # Saves journal in the database if it doens't exist
 # Returns journal id
+
+
 def save_journal(journal_name):
-    cur.execute("SELECT id FROM journals AS j WHERE j.name = %s;", (journal_name, ))
+    cur.execute("SELECT id FROM journals AS j WHERE j.name = %s;",
+                (journal_name, ))
     journal = cur.fetchone()
 
     # Create journal if it doesn't exist
     if journal is None:
-        cur.execute("INSERT INTO journals (name) VALUES (%s) RETURNING id;", (journal_name,))
+        cur.execute(
+            "INSERT INTO journals (name) VALUES (%s) RETURNING id;", (journal_name,))
 
         journal_id = cur.fetchone()[0]
         conn.commit()
@@ -35,32 +40,42 @@ def save_journal(journal_name):
         journal_id = journal[0]
 
     return journal_id
-    
 
-# Saves each author in the authors list 
+
+# Saves each author in the authors list
 def save_authors(authors, article_id):
     data = [(article_id, author_name) for author_name in authors]
-    psycopg2.extras.execute_values(cur, "INSERT INTO article_authors (article_id, author_name) VALUES %s", data, template=None, page_size=100)
+    psycopg2.extras.execute_values(
+        cur, "INSERT INTO article_authors (article_id, author_name) VALUES %s", data, template=None, page_size=100)
     conn.commit()
 
-# Saves each citation in the cited_by list 
+# Saves each citation in the cited_by list
+
+
 def save_cited_by(cited_by, article_id):
     data = [(article_id, cited_by_id) for cited_by_id in cited_by]
-    psycopg2.extras.execute_values(cur, "INSERT INTO cited_by (article_id, cited_by_id) VALUES %s", data, template=None, page_size=100)
+    psycopg2.extras.execute_values(
+        cur, "INSERT INTO cited_by (article_id, cited_by_id) VALUES %s", data, template=None, page_size=100)
     conn.commit()
 
-# Saves each citation in the cites list 
+# Saves each citation in the cites list
+
+
 def save_cites(cites, article_id):
     data = [(article_id, cites_article_id) for cites_article_id in cites]
-    psycopg2.extras.execute_values(cur, "INSERT INTO cites (article_id, cites_article_id) VALUES %s", data, template=None, page_size=100)
+    psycopg2.extras.execute_values(
+        cur, "INSERT INTO cites (article_id, cites_article_id) VALUES %s", data, template=None, page_size=100)
     conn.commit()
 
 # Converts a list of article titles to article ids
+
+
 def convert_articles_to_ids(article_titles):
     article_ids = []
 
     for title in article_titles:
-        cur.execute("SELECT id FROM sma AS sma where sma.title = %s;", (title, ))
+        cur.execute(
+            "SELECT id FROM sma AS sma where sma.title = %s;", (title, ))
         article = cur.fetchone()
 
         if article is None:
@@ -77,28 +92,32 @@ def convert_articles_to_ids(article_titles):
     return article_ids
 
 # Saves an article
+
+
 def save_article(json_article):
     try:
-        cur.execute("SELECT id, journal_id FROM sma AS sma where sma.title = %s;", (json_article['title'], ))
+        cur.execute("SELECT id, journal_id FROM sma AS sma where sma.title = %s;",
+                    (json_article['title'], ))
         article = cur.fetchone()
-        
+
         # Create article if it doesn't exist
         if article is None:
             journal_id = save_journal(json_article['journal'])
-                cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
-                            (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
-                
-                article = cur.fetchone()
-                article_id = article[0]
-                conn.commit()
+            cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
+                        (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
 
-                # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
-                # Solution: Not groupBy. Used Primary Key on both columns.
-                save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
-                save_authors(json_article['authors'], article_id)
-                save_cites(convert_articles_to_ids(json_article['cites']), article_id)
-                print("Created new article: ", article_id)
+            article = cur.fetchone()
+            article_id = article[0]
+            conn.commit()
 
+            # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
+            # Solution: Not groupBy. Used Primary Key on both columns.
+            save_cited_by(convert_articles_to_ids(
+                json_article['citedBy']), article_id)
+            save_authors(json_article['authors'], article_id)
+            save_cites(convert_articles_to_ids(
+                json_article['cites']), article_id)
+            print("Created new article: ", article_id)
 
         else:
 
@@ -106,33 +125,35 @@ def save_article(json_article):
             # It becomes 'necessary' if the journal field is missing
             article_id = article[0]
             journal_id = article[1]
-            if journal_id is None: # Run the update
+            if journal_id is None:  # Run the update
                 journal_id = save_journal(json_article['journal'])
-                cur.execute("UPDATE sma SET expected_cited_by_count=%s, expected_cites_count=%s, abstract=%s, publish_date=%s, date_added=%s, journal_id=%s WHERE id = %s;", 
+                cur.execute("UPDATE sma SET expected_cited_by_count=%s, expected_cites_count=%s, abstract=%s, publish_date=%s, date_added=%s, journal_id=%s WHERE id = %s;",
                             (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), journal_id, article_id))
                 conn.commit()
 
                 # Unique pairs in citedBy, cites, and authors table. (Hint: GroupBy?)
                 # Solution: Not groupBy. Used Primary Key on both columns.
-                save_cited_by(convert_articles_to_ids(json_article['citedBy']), article_id)
+                save_cited_by(convert_articles_to_ids(
+                    json_article['citedBy']), article_id)
                 save_authors(json_article['authors'], article_id)
-                save_cites(convert_articles_to_ids(json_article['cites']), article_id)
+                save_cites(convert_articles_to_ids(
+                    json_article['cites']), article_id)
                 print("Updated article: ", article_id)
 
             # ------------------------------------------------------------------------------
             # journal_id = save_journal(json_article['journal'])
-            # cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT (id) DO UPDATE SET expected_cited_by_count = 666 RETURNING id;", 
+            # cur.execute("INSERT INTO sma (expected_cited_by_count, expected_cites_count, abstract, publish_date, date_added, title, journal_id) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT (id) DO UPDATE SET expected_cited_by_count = 666 RETURNING id;",
             #         (json_article['citationCount'], json_article['referenceCount'], json_article['abstract'], json_article['date'], datetime.datetime.now(), json_article['title'], journal_id))
-            
+
             # article = cur.fetchone()
             # article_id = article[0]
         return article_id
 
     except Exception as e:
         print('Error occurred while creating new article:', e)
-        return -1;
+        return -1
 
-    
+
 def save_article_file(filename):
     with open(filename) as data:
         json_article = json.load(data)
@@ -140,24 +161,29 @@ def save_article_file(filename):
         if json_article['citationCount'] == 'N/A':
             json_article['citationCount'] = 0
 
-        json_article['citationCount'] = str(json_article['citationCount']).replace(',', '')
-        json_article['referenceCount'] = str(json_article['referenceCount']).replace(',', '')
-
+        json_article['citationCount'] = str(
+            json_article['citationCount']).replace(',', '')
+        json_article['referenceCount'] = str(
+            json_article['referenceCount']).replace(',', '')
 
         print("Loaded json:", json_article['title'])
         article_id = save_article(json_article)
         print("Saved file")
         return article_id
-        
+
+
 def get_data_files():
     import glob
     return glob.glob("./Data/*/*")
+
 
 def move_data_file(date_folder, filename):
     if not os.path.exists("./Data_Archived/"+date_folder):
         os.makedirs("./Data_Archived/"+date_folder)
 
-    os.rename("./Data/{}/{}".format(date_folder, filename), "./Data_Archived/{}/{}".format(date_folder,filename))
+    os.rename("./Data/{}/{}".format(date_folder, filename),
+              "./Data_Archived/{}/{}".format(date_folder, filename))
+
 
 def get_folders(path):
     folders = []
@@ -175,33 +201,34 @@ def get_folders(path):
     folders.reverse()
     return folders
 
+
 if __name__ == "__main__":
     #conn = psycopg2.connect("host=localhost dbname=alex")
-    conn = psycopg2.connect("host=localhost port=5434 dbname=stephen user=stephen password=stephen")
+    conn = psycopg2.connect(
+        "host=localhost port=5434 dbname=stephen user=stephen password=stephen")
 
     cur = conn.cursor()
     # delete_all_rows()
 
     # print(save_journal('Space Journal 3'))
     # save_authors(['Space Author 1', 'Space Author 2', 'Space Author 3'], 0)
-    
+
     average_time = 0
     start_time = datetime.datetime.now()
     for file in get_data_files():
         time1 = datetime.datetime.now()
 
         article_id = save_article_file(file)
-    
-        time2 = datetime.datetime.now() # waited a few minutes before pressing enter
+
+        time2 = datetime.datetime.now()  # waited a few minutes before pressing enter
         elapsedTime = time2 - time1
         print("Time it took: ", elapsedTime.total_seconds())
-        average_time = average_time * 0.99 + elapsedTime.total_seconds() * (1-0.99) 
+        average_time = average_time * 0.99 + elapsedTime.total_seconds() * (1-0.99)
         print("Running average time: ", average_time)
         folders = get_folders(file)
 
         if article_id != -1:
             move_data_file(folders[2], folders[3])
-
 
     finish_time = datetime.datetime.now()
     elapsedTime = finish_time - start_time
@@ -209,7 +236,5 @@ if __name__ == "__main__":
     print(min_sec)
     print("Total run time: {} min {} sec".format(min_sec[0], min_sec[1]))
 
-    conn.commit() 
+    conn.commit()
     conn.close()
-
-
