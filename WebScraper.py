@@ -58,8 +58,9 @@ class WebScraper():
     self.options.add_argument("--headless")
     self.driver = webdriver.Firefox(firefox_options=self.options)
     self.data_source = data_source
-    self.start()
-    self.csv_journals = getCSVJournals()
+    self.csv_journals = self.getCSVJournals()
+
+    self.start() # Start scraping
 
   def start(self):
     total_attempts = 0 # Number of attempts across multiple pages
@@ -278,7 +279,7 @@ class WebScraper():
   '''
     Retrieves CSV journals for comparison from scraped data
   '''
-  def getCSVJournals():
+  def getCSVJournals(self):
     journalArray = []
     with open('categories.csv', encoding='utf8') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter='|')
