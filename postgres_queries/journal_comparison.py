@@ -4,7 +4,7 @@
 
 # SELECT * FROM journals
 
-# import python csv module to read csv's. 
+# import python csv module to read csv's.
 # Read csv and retrieve all journals from
 # Check:
 # -which journals are in both csv and database
@@ -16,6 +16,7 @@
 
 import csv
 import psycopg2
+
 
 def getCSVJournals():
     journalArray = []
@@ -33,8 +34,10 @@ def getDatabaseJournals():
                     FROM journals J""", ())
     return [row[0] for row in cur.fetchall()]
 
+
 if __name__ == "__main__":
-    conn = psycopg2.connect("host=localhost port=5434 dbname=stephen user=stephen password=stephen")
+    conn = psycopg2.connect(
+        "host=localhost port=5434 dbname=stephen user=stephen password=stephen")
     cur = conn.cursor()
 
     databaseJournals = getDatabaseJournals()
@@ -46,8 +49,9 @@ if __name__ == "__main__":
 
     inDatabaseNotCSV = databaseJournals - csvJournals
     inCSVnotDatabase = csvJournals - databaseJournals
-    
-    print("Database: " + str(len(databaseJournals)))
-    print("CSV: " + str(len(csvJournals)))
-    print("Database Not CSV: " + str(len(inDatabaseNotCSV)))
-    print("CSV Not Database: " + str(len(inCSVnotDatabase)))
+
+    print("Journals in Database: " + str(len(databaseJournals)))
+    print("Journals in CSV: " + str(len(csvJournals)))
+    print("-"*50)
+    print("Journals in Database and not in CSV: " + str(len(inDatabaseNotCSV)))
+    print("Journals in CSV and not in Database: " + str(len(inCSVnotDatabase)))
