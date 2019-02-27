@@ -9,6 +9,7 @@ import re
 import Globals
 import signal
 import sys 
+import csv
 
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options  
@@ -58,6 +59,7 @@ class WebScraper():
     self.driver = webdriver.Firefox(firefox_options=self.options)
     self.data_source = data_source
     self.start()
+    self.csv_journals = getCSVJournals()
 
   def start(self):
     total_attempts = 0 # Number of attempts across multiple pages
@@ -274,6 +276,18 @@ class WebScraper():
       return -1
 
   '''
+    Retrieves CSV journals for comparison from scraped data
+  '''
+  def getCSVJournals():
+    journalArray = []
+    with open('categories.csv', encoding='utf8') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter='|')
+
+        for row in csv_reader:
+            if len(row) == 4:
+                journalArray.append(row[3])
+    return journalArray 
+  '''
     Retrieves all of the information for each paper on the page
   '''
   def retrieveInfoFromPage(self, webpage):
@@ -334,6 +348,10 @@ class WebScraper():
       journal = paper.select(".paper-venue li a")
       journal_str = recursiveGetStringGivenList(journal)
       self.logger.log("thread{}.txt".format(self.ID), "Journal: " + journal_str, priority=Priority.ARTICLE_DETAILS)
+      
+      #Checks to make sure paper is actually social media article related
+      if journal_str not in self.csv_journals:
+        continue;
 
       #date = paper.select(".paper-date")
       #date_str = recursiveGetStringGivenList(date)
@@ -355,12 +373,6 @@ class WebScraper():
 
       citations = paper.select(".paper-actions a.c-count")
       self.logger.log("thread{}.txt".format(self.ID), '', priority=Priority.ARTICLE_DETAILS)
-
-
-
-
-
-
 
 
       # Generate and save the new article
