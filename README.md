@@ -22,7 +22,7 @@ source ./env/Scripts/activate
 ```
 Run the program:
 ```
-python3 WebScrapeMicrosoftAcademic.py
+python3 ScrapeMicrosoftAcademic.py
 ```
 
 ## Editing the .env
